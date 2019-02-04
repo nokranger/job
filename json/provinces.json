@@ -1,0 +1,466 @@
+{
+    "provinces": [
+      {
+        "province_id": "1",
+        "code": "10",
+        "p_name_in_thai": "กรุงเทพมหานคร",
+        "p_name_in_english": "Bangkok"
+      },
+      {
+        "province_id": "2",
+        "code": "11",
+        "p_name_in_thai": "สมุทรปราการ",
+        "p_name_in_english": "Samut Prakarn"
+      },
+      {
+        "province_id": "3",
+        "code": "12",
+        "p_name_in_thai": "นนทบุรี",
+        "p_name_in_english": "Nonthaburi"
+      },
+      {
+        "province_id": "4",
+        "code": "13",
+        "p_name_in_thai": "ปทุมธานี",
+        "p_name_in_english": "Pathum Thani"
+      },
+      {
+        "province_id": "5",
+        "code": "14",
+        "p_name_in_thai": "พระนครศรีอยุธยา",
+        "p_name_in_english": "Phra Nakhon Si Ayutthaya"
+      },
+      {
+        "province_id": "6",
+        "code": "15",
+        "p_name_in_thai": "อ่างทอง",
+        "p_name_in_english": "Ang Thong"
+      },
+      {
+        "province_id": "7",
+        "code": "16",
+        "p_name_in_thai": "ลพบุรี",
+        "p_name_in_english": "Lop Buri"
+      },
+      {
+        "province_id": "8",
+        "code": "17",
+        "p_name_in_thai": "สิงห์บุรี",
+        "p_name_in_english": "Sing Buri"
+      },
+      {
+        "province_id": "9",
+        "code": "18",
+        "p_name_in_thai": "ชัยนาท",
+        "p_name_in_english": "Chai Nat"
+      },
+      {
+        "province_id": "10",
+        "code": "19",
+        "p_name_in_thai": "สระบุรี",
+        "p_name_in_english": "Saraburi"
+      },
+      {
+        "province_id": "11",
+        "code": "20",
+        "p_name_in_thai": "ชลบุรี",
+        "p_name_in_english": "Chon Buri"
+      },
+      {
+        "province_id": "12",
+        "code": "21",
+        "p_name_in_thai": "ระยอง",
+        "p_name_in_english": "Rayong"
+      },
+      {
+        "province_id": "13",
+        "code": "22",
+        "p_name_in_thai": "จันทบุรี",
+        "p_name_in_english": "Chanthaburi"
+      },
+      {
+        "province_id": "14",
+        "code": "23",
+        "p_name_in_thai": "ตราด",
+        "p_name_in_english": "Trat"
+      },
+      {
+        "province_id": "15",
+        "code": "24",
+        "p_name_in_thai": "ฉะเชิงเทรา",
+        "p_name_in_english": "Chachoengsao"
+      },
+      {
+        "province_id": "16",
+        "code": "25",
+        "p_name_in_thai": "ปราจีนบุรี",
+        "p_name_in_english": "Prachin Buri"
+      },
+      {
+        "province_id": "17",
+        "code": "26",
+        "p_name_in_thai": "นครนายก",
+        "p_name_in_english": "Nakhon Nayok"
+      },
+      {
+        "province_id": "18",
+        "code": "27",
+        "p_name_in_thai": "สระแก้ว",
+        "p_name_in_english": "Sa kaeo"
+      },
+      {
+        "province_id": "19",
+        "code": "30",
+        "p_name_in_thai": "นครราชสีมา",
+        "p_name_in_english": "Nakhon Ratchasima"
+      },
+      {
+        "province_id": "20",
+        "code": "31",
+        "p_name_in_thai": "บุรีรัมย์",
+        "p_name_in_english": "Buri Ram"
+      },
+      {
+        "province_id": "21",
+        "code": "32",
+        "p_name_in_thai": "สุรินทร์",
+        "p_name_in_english": "Surin"
+      },
+      {
+        "province_id": "22",
+        "code": "33",
+        "p_name_in_thai": "ศรีสะเกษ",
+        "p_name_in_english": "Si Sa Ket"
+      },
+      {
+        "province_id": "23",
+        "code": "34",
+        "p_name_in_thai": "อุบลราชธานี",
+        "p_name_in_english": "Ubon Ratchathani"
+      },
+      {
+        "province_id": "24",
+        "code": "35",
+        "p_name_in_thai": "ยโสธร",
+        "p_name_in_english": "Yasothon"
+      },
+      {
+        "province_id": "25",
+        "code": "36",
+        "p_name_in_thai": "ชัยภูมิ",
+        "p_name_in_english": "Chaiyaphum"
+      },
+      {
+        "province_id": "26",
+        "code": "37",
+        "p_name_in_thai": "อำนาจเจริญ",
+        "p_name_in_english": "Amnat Charoen"
+      },
+      {
+        "province_id": "27",
+        "code": "38",
+        "p_name_in_thai": "บึงกาฬ",
+        "p_name_in_english": "Bueng Kan"
+      },
+      {
+        "province_id": "28",
+        "code": "39",
+        "p_name_in_thai": "หนองบัวลำภู",
+        "p_name_in_english": "Nong Bua Lam Phu"
+      },
+      {
+        "province_id": "29",
+        "code": "40",
+        "p_name_in_thai": "ขอนแก่น",
+        "p_name_in_english": "Khon Kaen"
+      },
+      {
+        "province_id": "30",
+        "code": "41",
+        "p_name_in_thai": "อุดรธานี",
+        "p_name_in_english": "Udon Thani"
+      },
+      {
+        "province_id": "31",
+        "code": "42",
+        "p_name_in_thai": "เลย",
+        "p_name_in_english": "Loei"
+      },
+      {
+        "province_id": "32",
+        "code": "43",
+        "p_name_in_thai": "หนองคาย",
+        "p_name_in_english": "Nong Khai"
+      },
+      {
+        "province_id": "33",
+        "code": "44",
+        "p_name_in_thai": "มหาสารคาม",
+        "p_name_in_english": "Maha Sarakham"
+      },
+      {
+        "province_id": "34",
+        "code": "45",
+        "p_name_in_thai": "ร้อยเอ็ด",
+        "p_name_in_english": "Roi Et"
+      },
+      {
+        "province_id": "35",
+        "code": "46",
+        "p_name_in_thai": "กาฬสินธุ์",
+        "p_name_in_english": "Kalasin"
+      },
+      {
+        "province_id": "36",
+        "code": "47",
+        "p_name_in_thai": "สกลนคร",
+        "p_name_in_english": "Sakon Nakhon"
+      },
+      {
+        "province_id": "37",
+        "code": "48",
+        "p_name_in_thai": "นครพนม",
+        "p_name_in_english": "Nakhon Phanom"
+      },
+      {
+        "province_id": "38",
+        "code": "49",
+        "p_name_in_thai": "มุกดาหาร",
+        "p_name_in_english": "Mukdahan"
+      },
+      {
+        "province_id": "39",
+        "code": "50",
+        "p_name_in_thai": "เชียงใหม่",
+        "p_name_in_english": "Chiang Mai"
+      },
+      {
+        "province_id": "40",
+        "code": "51",
+        "p_name_in_thai": "ลำพูน",
+        "p_name_in_english": "Lamphun"
+      },
+      {
+        "province_id": "41",
+        "code": "52",
+        "p_name_in_thai": "ลำปาง",
+        "p_name_in_english": "Lampang"
+      },
+      {
+        "province_id": "42",
+        "code": "53",
+        "p_name_in_thai": "อุตรดิตถ์",
+        "p_name_in_english": "Uttaradit"
+      },
+      {
+        "province_id": "43",
+        "code": "54",
+        "p_name_in_thai": "แพร่",
+        "p_name_in_english": "Phrae"
+      },
+      {
+        "province_id": "44",
+        "code": "55",
+        "p_name_in_thai": "น่าน",
+        "p_name_in_english": "Nan"
+      },
+      {
+        "province_id": "45",
+        "code": "56",
+        "p_name_in_thai": "พะเยา",
+        "p_name_in_english": "Phayao"
+      },
+      {
+        "province_id": "46",
+        "code": "57",
+        "p_name_in_thai": "เชียงราย",
+        "p_name_in_english": "Chiang Rai"
+      },
+      {
+        "province_id": "47",
+        "code": "58",
+        "p_name_in_thai": "แม่ฮ่องสอน",
+        "p_name_in_english": "Mae Hong Son"
+      },
+      {
+        "province_id": "48",
+        "code": "60",
+        "p_name_in_thai": "นครสวรรค์",
+        "p_name_in_english": "Nakhon Sawan"
+      },
+      {
+        "province_id": "49",
+        "code": "61",
+        "p_name_in_thai": "อุทัยธานี",
+        "p_name_in_english": "Uthai Thani"
+      },
+      {
+        "province_id": "50",
+        "code": "62",
+        "p_name_in_thai": "กำแพงเพชร",
+        "p_name_in_english": "Kamphaeng Phet"
+      },
+      {
+        "province_id": "51",
+        "code": "63",
+        "p_name_in_thai": "ตาก",
+        "p_name_in_english": "Tak"
+      },
+      {
+        "province_id": "52",
+        "code": "64",
+        "p_name_in_thai": "สุโขทัย",
+        "p_name_in_english": "Sukhothai"
+      },
+      {
+        "province_id": "53",
+        "code": "65",
+        "p_name_in_thai": "พิษณุโลก",
+        "p_name_in_english": "Phitsanulok"
+      },
+      {
+        "province_id": "54",
+        "code": "66",
+        "p_name_in_thai": "พิจิตร",
+        "p_name_in_english": "Phichit"
+      },
+      {
+        "province_id": "55",
+        "code": "67",
+        "p_name_in_thai": "เพชรบูรณ์",
+        "p_name_in_english": "Phetchabun"
+      },
+      {
+        "province_id": "56",
+        "code": "70",
+        "p_name_in_thai": "ราชบุรี",
+        "p_name_in_english": "Ratchaburi"
+      },
+      {
+        "province_id": "57",
+        "code": "71",
+        "p_name_in_thai": "กาญจนบุรี",
+        "p_name_in_english": "Kanchanaburi"
+      },
+      {
+        "province_id": "58",
+        "code": "72",
+        "p_name_in_thai": "สุพรรณบุรี",
+        "p_name_in_english": "Suphan Buri"
+      },
+      {
+        "province_id": "59",
+        "code": "73",
+        "p_name_in_thai": "นครปฐม",
+        "p_name_in_english": "Nakhon Pathom"
+      },
+      {
+        "province_id": "60",
+        "code": "74",
+        "p_name_in_thai": "สมุทรสาคร",
+        "p_name_in_english": "Samut Sakhon"
+      },
+      {
+        "province_id": "61",
+        "code": "75",
+        "p_name_in_thai": "สมุทรสงคราม",
+        "p_name_in_english": "Samut Songkhram"
+      },
+      {
+        "province_id": "62",
+        "code": "76",
+        "p_name_in_thai": "เพชรบุรี",
+        "p_name_in_english": "Phetchaburi"
+      },
+      {
+        "province_id": "63",
+        "code": "77",
+        "p_name_in_thai": "ประจวบคีรีขันธ์",
+        "p_name_in_english": "Prachuap Khiri Khan"
+      },
+      {
+        "province_id": "64",
+        "code": "80",
+        "p_name_in_thai": "นครศรีธรรมราช",
+        "p_name_in_english": "Nakhon Si Thammarat"
+      },
+      {
+        "province_id": "65",
+        "code": "81",
+        "p_name_in_thai": "กระบี่",
+        "p_name_in_english": "Krabi"
+      },
+      {
+        "province_id": "66",
+        "code": "82",
+        "p_name_in_thai": "พังงา",
+        "p_name_in_english": "Phang-nga"
+      },
+      {
+        "province_id": "67",
+        "code": "83",
+        "p_name_in_thai": "ภูเก็ต",
+        "p_name_in_english": "Phuket"
+      },
+      {
+        "province_id": "68",
+        "code": "84",
+        "p_name_in_thai": "สุราษฎร์ธานี",
+        "p_name_in_english": "Surat Thani"
+      },
+      {
+        "province_id": "69",
+        "code": "85",
+        "p_name_in_thai": "ระนอง",
+        "p_name_in_english": "Ranong"
+      },
+      {
+        "province_id": "70",
+        "code": "86",
+        "p_name_in_thai": "ชุมพร",
+        "p_name_in_english": "Chumphon"
+      },
+      {
+        "province_id": "71",
+        "code": "90",
+        "p_name_in_thai": "สงขลา",
+        "p_name_in_english": "Songkhla"
+      },
+      {
+        "province_id": "72",
+        "code": "91",
+        "p_name_in_thai": "สตูล",
+        "p_name_in_english": "Satun"
+      },
+      {
+        "province_id": "73",
+        "code": "92",
+        "p_name_in_thai": "ตรัง",
+        "p_name_in_english": "Trang"
+      },
+      {
+        "province_id": "74",
+        "code": "93",
+        "p_name_in_thai": "พัทลุง",
+        "p_name_in_english": "Phatthalung"
+      },
+      {
+        "province_id": "75",
+        "code": "94",
+        "p_name_in_thai": "ปัตตานี",
+        "p_name_in_english": "Pattani"
+      },
+      {
+        "province_id": "76",
+        "code": "95",
+        "p_name_in_thai": "ยะลา",
+        "p_name_in_english": "Yala"
+      },
+      {
+        "province_id": "77",
+        "code": "96",
+        "p_name_in_thai": "นราธิวาส",
+        "p_name_in_english": "Narathiwat"
+      }
+    ]
+}

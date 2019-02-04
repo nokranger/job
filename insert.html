@@ -1,0 +1,1188 @@
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  <link rel="stylesheet" href="css/edit.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/multiple-select.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
+    crossorigin='anonymous'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <title>Form register</title>
+  <style>
+    header{
+      background:
+    -webkit-linear-gradient(65deg, hsla(176.64, 68.42%, 59.02%, 1) 10%, hsla(176.64, 68.42%, 59.02%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(192.8, 73.21%, 43.92%, 1) 15%, hsla(192.8, 73.21%, 43.92%, 0) 80%),
+    -webkit-linear-gradient(205deg, hsla(240, 60.83%, 52.94%, 1) 100%, hsla(240, 60.83%, 52.94%, 0) 70%);
+      background:
+    linear-gradient(25deg, hsla(176.64, 68.42%, 59.02%, 1) 10%, hsla(176.64, 68.42%, 59.02%, 0) 80%),
+    linear-gradient(315deg, hsla(192.8, 73.21%, 43.92%, 1) 15%, hsla(192.8, 73.21%, 43.92%, 0) 80%),
+    linear-gradient(245deg, hsla(240, 60.83%, 52.94%, 1) 100%, hsla(240, 60.83%, 52.94%, 0) 70%);
+          }
+    footer{
+      background:
+    -webkit-linear-gradient(65deg, hsla(176.64, 68.42%, 59.02%, 1) 10%, hsla(176.64, 68.42%, 59.02%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(192.8, 73.21%, 43.92%, 1) 15%, hsla(192.8, 73.21%, 43.92%, 0) 80%),
+    -webkit-linear-gradient(205deg, hsla(240, 60.83%, 52.94%, 1) 100%, hsla(240, 60.83%, 52.94%, 0) 70%);
+      background:
+    linear-gradient(25deg, hsla(176.64, 68.42%, 59.02%, 1) 10%, hsla(176.64, 68.42%, 59.02%, 0) 80%),
+    linear-gradient(315deg, hsla(192.8, 73.21%, 43.92%, 1) 15%, hsla(192.8, 73.21%, 43.92%, 0) 80%),
+    linear-gradient(245deg, hsla(240, 60.83%, 52.94%, 1) 100%, hsla(240, 60.83%, 52.94%, 0) 70%);
+          }
+    textarea {
+            width: 60%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            /* border: 2px solid #ccc; */
+            border-radius: 4px;
+            /* background-color: #f8f8f8; */
+            font-size: 16px;
+            resize: none;
+            margin: 20px 0;
+            font-family: 'Lora', serif;
+          }
+      .input[type="text"] {
+        width: 100%;
+        /* border: 2px solid #aaa; */
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+        font-family: 'Lora', serif;
+        
+      }
+      
+      .input[type="text"]:focus {
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+      }
+      
+      .inputWithIcon .input[type="text"] {
+        padding-left: 40px;
+      }
+      
+      .inputWithIcon {
+        position: relative;
+      }
+      
+      .inputWithIcon i {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        padding: 9px 8px;
+        color: #aaa;
+        transition: 0.3s;
+      }
+      
+      .inputWithIcon .input[type="text"]:focus + i {
+        color: dodgerBlue;
+      }
+      
+      .inputWithIcon.inputIconBg i {
+        background-color: #aaa;
+        color: #fff;
+        padding: 9px 4px;
+        border-radius: 4px 0 0 4px;
+      }
+      
+      .inputWithIcon.inputIconBg .input[type="text"]:focus + i {
+        color: #fff;
+        background-color: dodgerBlue;
+      }
+      /*aaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+            .input[type="tel"] {
+        width: 100%;
+        /* border: 2px solid #aaa; */
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+        font-family: 'Lora', serif;
+        
+      }
+      
+      .input[type="tel"]:focus {
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+      }
+      
+      .inputWithIcon .input[type="tel"] {
+        padding-left: 40px;
+      }
+      
+      .inputWithIcon {
+        position: relative;
+      }
+      
+      .inputWithIcon i {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        padding: 9px 8px;
+        color: #aaa;
+        transition: 0.3s;
+      }
+      
+      .inputWithIcon .input[type="tel"]:focus + i {
+        color: dodgerBlue;
+      }
+      
+      .inputWithIcon.inputIconBg i {
+        background-color: #aaa;
+        color: #fff;
+        padding: 9px 4px;
+        border-radius: 4px 0 0 4px;
+      }
+      
+      .inputWithIcon.inputIconBg .input[type="tel"]:focus + i {
+        color: #fff;
+        background-color: dodgerBlue;
+      }
+      /*bbbbbbbbbbbbbbbbbb*/
+
+      .input[type="email"] {
+        width: 100%;
+        /* border: 2px solid #aaa; */
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+        font-family: 'Lora', serif;
+        
+      }
+      
+      .input[type="email"]:focus {
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+      }
+      
+      .inputWithIcon .input[type="email"] {
+        padding-left: 40px;
+      }
+      
+      .inputWithIcon {
+        position: relative;
+      }
+      
+      .inputWithIcon i {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        padding: 9px 8px;
+        color: #aaa;
+        transition: 0.3s;
+      }
+      
+      .inputWithIcon .input[type="email"]:focus + i {
+        color: dodgerBlue;
+      }
+      
+      .inputWithIcon.inputIconBg i {
+        background-color: #aaa;
+        color: #fff;
+        padding: 9px 4px;
+        border-radius: 4px 0 0 4px;
+      }
+      
+      .inputWithIcon.inputIconBg .input[type="email"]:focus + i {
+        color: #fff;
+        background-color: dodgerBlue;
+      }
+      /*cccccccccc*/
+
+      .input[type="date"] {
+        width: 100%;
+        /* border: 2px solid #aaa; */
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+        font-family: 'Lora', serif;
+        
+      }
+      
+      .input[type="date"]:focus {
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+      }
+      
+      .inputWithIcon .input[type="date"] {
+        padding-left: 40px;
+      }
+      
+      .inputWithIcon {
+        position: relative;
+      }
+      
+      .inputWithIcon i {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        padding: 9px 8px;
+        color: #aaa;
+        transition: 0.3s;
+      }
+      
+      .inputWithIcon .input[type="date"]:focus + i {
+        color: dodgerBlue;
+      }
+      
+      .inputWithIcon.inputIconBg i {
+        background-color: #aaa;
+        color: #fff;
+        padding: 9px 4px;
+        border-radius: 4px 0 0 4px;
+      }
+      
+      .inputWithIcon.inputIconBg .input[type="date"]:focus + i {
+        color: #fff;
+        background-color: dodgerBlue;
+      }
+        </style>
+  <style>
+    .dropdown-menu{
+      display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+    }
+    .dropdown-menu a{
+      color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+    }
+    .dropdown-menu a:hover {
+      background-color: #c2c2a3;
+    }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+    .img-profile {
+    width: 170px;
+    height: 200px;
+    border-radius: 8px;
+    margin: 10px;
+    border: solid 2px #E0e0e0;
+}
+.img-profile::before{
+  background-color: white;
+}
+button{
+    margin:10px;
+    padding: 8px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* box-sizing: border-box; */
+    font-family: 'Lora', serif;
+}
+b{
+  font-family: 'Lora', serif;
+  }
+  body{
+  background:	#f4f5f7;
+          }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+    $("#tn").val("aa")
+    var script_url = "https://script.google.com/macros/s/AKfycbxBW4B33KJY1XuZ5nrtWxw9z8yUDLxzVzeY7_1WPq-DUxs3H_bm/exec"; //app form
+    var script_url2 = "https://script.google.com/macros/s/AKfycbx11chHd4HssEp2hg_66KlJfrm2u5zd4dDbLmLCxGAa0ymMyoU3/exec"; //app form
+    // Make an AJAX call to Google Script
+    var a,b,c,d = "";
+    function insert_value() {
+      $("#re").css("visibility", "hidden");
+      document.getElementById("loader").style.visibility = "visible";
+      $('#mySpinner').addClass('spinner');
+      var id1 = $("#id").val();
+      var tn = $("#tn").val();
+      var name = $("#name").val();
+      var lname = $("#lname").val();
+      var dob = $("#dob").val();
+      var tel = $("#tel").val();
+      var fb = $("#fb").val();
+      var line = $("#line").val();
+      var ig = $("#ig").val();
+      var aic = $("#aic").val();
+      var ca = $("#ca").val();
+      var ei = $("#ei").val();
+      var gpa = $("#gpa").val();
+      var sp = $("#sp").val();
+      var tfp = $("#tfp").val();
+      var spack = $("#spack").val();
+      var mail = $("#mail").val();
+      var git = $("#git").val();
+      var link = $("#link").val();
+      var major = $("#major").val();
+      var minor = $("#minor").val();
+      var about = $("#about").val();
+      var pic = $("#pic").val();
+      var exp = $("#exp").val();
+      var ref = $("#ref").val();
+      var token = $("#token").val();
+      var height = $("#height").val();
+      var weight = $("#weight").val();
+      var age = $("#age").val();
+      var job = $("#job").val();
+      var sal = $("#sal").val();
+      var db = $("#db").val();
+      var os = $("#os").val();
+      var cen = $("#cen").val();
+      var job_l = $("#job_l").val();
+      var swd = $("#swd").val();
+      var dop = $("#dop").val();
+      var cs = $("#cs").val();
+
+      var port = "";
+      var url = script_url + "?callback&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&token=" + token + "&height=" + height + "&weight=" + weight + "&age=" + age + "&job=" + job + "&sal=" + sal + "&db=" + db + "&os=" + os + "&cen=" + cen + "&job_l=" + job_l + "&swd=" + swd + "&dop=" + dop + "&cs=" + cs + "&port=" + port + "&action=insert";
+      a =os;
+      b=db;
+      c=job;
+      d=job_l;
+      document.getElementById("database").value = a
+      document.getElementById("oper").value = b
+      document.getElementById("cur_job").value = c
+      document.getElementById("job_lawa").value = d
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+      insert_value_2()
+    }
+    function insert_value_2() {
+      $("#re").css("visibility", "hidden");
+      document.getElementById("loader").style.visibility = "visible";
+      $('#mySpinner').addClass('spinner');
+      var id1 = $("#id").val();
+      var tn = $("#tn").val();
+      var name = $("#name").val();
+      var lname = $("#lname").val();
+      var dob = $("#dob").val();
+      var tel = $("#tel").val();
+      var fb = $("#fb").val();
+      var line = $("#line").val();
+      var ig = $("#ig").val();
+      var aic = $("#aic").val();
+      var ca = $("#ca").val();
+      var ei = $("#ei").val();
+      var gpa = $("#gpa").val();
+      var sp = $("#sp").val();
+      var tfp = $("#tfp").val();
+      var spack = $("#spack").val();
+      var mail = $("#mail").val();
+      var git = $("#git").val();
+      var link = $("#link").val();
+      var major = $("#major").val();
+      var minor = $("#minor").val();
+      var about = $("#about").val();
+      var pic = $("#pic").val();
+      var exp = $("#exp").val();
+      var ref = $("#ref").val();
+      var token = $("#token").val();
+      var height = $("#height").val();
+      var weight = $("#weight").val();
+      var age = $("#age").val();
+      var job = $("#job").val();
+      var sal = $("#sal").val();
+      var db = $("#db").val();
+      var os = $("#os").val();
+      var cen = $("#cen").val();
+      var job_l = $("#job_l").val();
+      var swd = $("#swd").val();
+      var dop = $("#dop").val();
+      var cs = $("#cs").val();
+      var port = $("#port").val();
+      var status = "insert"
+      var url = script_url2 + "?callback&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&token=" + token + "&height=" + height + "&weight=" + weight + "&age=" + age + "&job=" + job + "&sal=" + sal + "&db=" + db + "&os=" + os + "&cen=" + cen + "&job_l=" + job_l + "&swd=" + swd + "&dop=" + dop + "&cs=" + cs + "&port=" + port + "&status=" + status + "&action=insert";
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+  <!-- style="bgcolor:#673AB7" -->
+  <div align="center">
+    <article>
+      <header>
+        <!-- <h1 style="margin:30px;"><strong style="color:white">Application form for register</strong></h1> -->
+        <br>
+        <h1>
+          <p style="color:white"><strong style="color:white">Application form for register</strong></p>
+        </h1>
+        <br>
+      </header>
+    </article>
+  </div>
+  <!-- <p style="color:white">This is simple application<p> -->
+  <nav style="background:white;border: none;box-shadow: 0px 15px 20px -15px rgba(0,0,0,0.3);" class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="insert.html">ECS</a> -->
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="insert.html"><i style="margin-right:10px" class="fa fa-address-book"></i>Register
+            </a></li>
+          <li><a href="update.html"><i style="margin-right:10px" class="fa fa-edit"></i>Edit
+            </a></li>
+          <li><a href="delete.html"><i style="margin-right:10px" class="fa fa-remove"></i>Delete
+            </a></li>
+          <li><a href="login.html"><i style="margin-right:10px" class="fa fa-sign-in"></i>Login
+            </a></li>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div align="left">
+    <!-- //class="container-bg" -->
+    <form id="myForm" name="myForm" action="mailer.php" method="POST" onsubmit="javascript:insert_value()" enctype="multipart/form-data">
+      <!-- <label>ID :</label> -->
+      <input type="hidden" name="id" id="id" required></input>
+      <input type="hidden" name="token" id="token" required></input>
+      <input type="hidden" name="cur_job" id="cur_job" ></input>
+      <input type="hidden" name="database" id="database" ></input>
+      <input type="hidden" name="oper" id="oper" ></input>
+      <input type="hidden" name="job_lawa" id="job_lawa" ></input>
+      <label type="hidden"></label>
+      <!-- <label id="id" name="id"></label><br> -->
+  </div>
+  <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+          <b style="font-size: 20px;">Personal Information</b>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" align="center">
+        <label><b style="color:red">* </b>Your picture </label><br>
+        <div>
+          <img id="picpreview" class="img-profile" src="uploads/asdasd.PNG" alt="">
+          <!-- <img id="blah" src="#" alt="your image" class="img-profile" /> -->
+        </div>
+        <input type="file" name="files[]" id="pic" multiple></input>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Title Name : </label><br>
+        <select name="tn" id="tn" style="margin: 8px 0;margin-left: 1px;font-family: 'Lora', serif;">
+          <option value="">Select</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Mrs.">Mrs.</option>
+        </select>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label><b style="color:red">* </b>First Name : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="name" id="name" placeholder="Enter your first name" onkeypress="return isCharKey(event)"
+            onchange="return checkName()" maxlength="30" required></input>
+          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label><b style="color:red">* </b>Last Name : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="lname" id="lname" placeholder="Enter your last name" onkeypress="return isCharKey(event)"
+            onchange="return checkLname()" maxlength="30" required></input>
+          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Date of birth : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="date" name="dob" id="dob" max="2100-12-31"></input>
+          <i class="fa fa-calendar fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Height : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="height" id="height" placeholder="Enter your Height " onkeypress="return isNumberKey(event)"
+            maxlength="5"></input>
+          <i class="fa fa-text-height fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Weight : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="weight" id="weight" placeholder="Enter your Weight" onkeypress="return isNumberKey(event)"
+            maxlength="5"></input>
+          <i class="fas fa-weight fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Age : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="age" id="age" placeholder="Enter your Age" onkeypress="return isNumberKey(event)"
+            maxlength="3"></input>
+          <i class="fas fa-birthday-cake fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label><b style="color:red">* </b>Position : </label><br>
+        <div class="inputWithIcon">
+          <!-- <input class="input" type="text" name="pos" id="pos" placeholder="Enter your Position" onkeypress="return isCharKey(event)"
+                    onchange="return checkLname()" maxlength="30" ></input>
+                  <i class="fa fa-group fa-lg fa-fw" aria-hidden="true"></i> -->
+          <div id="mySelect_job" name="mySelect_job"></div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Salary : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="sal" id="sal" placeholder="Enter your Salary" onkeypress="return isNumberKey(event)"
+            maxlength="30"></input>
+          <i class="fa fa-money fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+          <b style="font-size: 20px;">Education</b>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Educational institution : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="ei" id="ei" placeholder="Enter your University" onkeypress="return isCharKey(event)"
+            onchange="return checku()" maxlength="40"></input>
+          <i class="fa fa-university fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Major : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="major" id="major" placeholder="Enter your Major" onkeypress="return isCharKey(event)"
+            onchange="return checkmajor()" maxlength="40"></input>
+          <i class="fa fa-graduation-cap fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Minor : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="minor" id="minor" placeholder="Enter your Minor" onkeypress="return isCharKey(event)"
+            onchange="return checkminor()" maxlength="40"></input>
+          <i class="fa fa-graduation-cap fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>GPAX : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="gpa" id="gpa" placeholder="Enter GPA" onkeypress="return isNumberKey(event)"
+            maxlength="4"></input>
+          <i class="fa fa-graduation-cap fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+          <b style="font-size: 20px;">Contact</b>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label><b style="color:red">* </b>Telephone Number : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="tel" name="tel" id="tel" placeholder="0213456789" maxlength="10" onkeypress="return isNumberKey(event)"
+            onchange="return checktel()" required></input>
+          <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label><b style="color:red">* </b>Email Address : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="email" name="mail" id="mail" placeholder="Enter E-mail  address" onchange="return checkmail()"
+            onchange="validateEmail()" required></input>
+          <!-- <button type='button' id='validate' onclick="validateEmail()">Validate!</button> -->
+          <!-- <h2 id='result'></h2> -->
+          <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Address in ID Card : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="aic" id="aic" placeholder="Enter your address"></input>
+          <i class="fa fa-address-card fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Current Address : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="ca" id="ca" placeholder="Enter your address"></input>
+          <i class="fa fa-address-card fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Reference : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="ref" id="ref" placeholder="Enter Who can Reference for you" onkeypress="return isCharKey(event)"
+            onchange="return checkref()"></input>
+          <i class="fa fa-user-circle fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+          <b style="font-size: 20px;">Computer Skill</b>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="example example_typeahead inputWithIcon " style="margin-left:-8px;">
+          <label>Programing language : </label><br>
+          <div class="inputWithIcon bs-example">
+            <input class="input" type="text" name="sp" id="sp"></input><br>
+            <i style="margin-left:2px;" class="fa fa-code fa-lg fa-fw" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Software Package : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="spack" id="spack" placeholder="ORACLE Etc." onkeypress="return isCharKey(event)"
+            onchange="return checkpack()" maxlength="40"></input>
+          <i class="fa fa-desktop fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Tool for development : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="tfp" id="tfp" placeholder="Vscode Etc." onkeypress="return isCharKey(event)"
+            onchange="return checktool()" maxlength="40"></input>
+          <i class="fa fa-cog fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Database : </label><br>
+        <div class="inputWithIcon">
+          <!-- <input class="input" type="text" name="db" id="db" placeholder="MongoDB Etc." onkeypress="return isCharKey(event)"
+              onchange="return checktool()" maxlength="40" ></input> -->
+          <!-- <input class="input" data-list="CSS, JavaScript, HTML, SVG, ARIA, MathML" id="bb" name="bb" onchange="javascript: cc(this.value);"
+           data-multiple="" data-minchars="1" autocomplete="off" aria-expanded="false" aria-owns="awesomplete_list_2" role="combobox" ></input> -->
+          <div id="mySelect_db" name="mySelect_db"></div>
+          <!-- <i class="fa fa-database fa-lg fa-fw" aria-hidden="true"></i> -->
+        </div>
+        <!-- <div id="mySelect_db" name="mySelect_db"></div> -->
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Operating System : </label><br>
+        <div class="inputWithIcon">
+          <div id="mySelect_os" name="mySelect_os"></div>
+          <!-- <i class="fa fa-desktop fa-lg fa-fw" aria-hidden="true"></i> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+          <b style="font-size: 20px;">Social</b>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Facebook : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="fb" id="fb" placeholder="Enter your facebook id"></input>
+          <i class="fa fa-facebook-official fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Line : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="line" id="line" placeholder="Enter your id line"></input>
+          <i class="fab fa-line fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Instagram : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="ig" id="ig" placeholder="Enter your Instagram"></input>
+          <i class="fa fa-instagram fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Github: </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="git" id="git" placeholder="Enter your Github"></input>
+          <i class="fa fa-github fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Linkedin: </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="link" id="link" placeholder="Enter your Linkedin"></input>
+          <i class="fa fa-linkedin-square fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+          <b style="font-size: 20px;">Work Experiece</b>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Current enterprise : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="cen" id="cen" placeholder="Enter your Current enterprise"></input>
+          <i class="fa fa-university fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label><b style="color:red">* </b>Working position : </label><br>
+        <div class="inputWithIcon">
+          <!-- <input class="input" type="text" name="wpos" id="wpos" placeholder="Enter your Linkedin"></input>
+                <i class="fa fa-group fa-lg fa-fw" aria-hidden="true"></i> -->
+          <div id="mySelect_job_l" name="mySelect_job_l"></div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Start work date : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="date" name="swd" id="swd" max="2100-12-31"></input>
+          <i class="fa fa-calendar fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Date of departure : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="date" name="dop" id="dop" max="2100-12-31"></input>
+          <i class="fa fa-calendar fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <label>Current salary : </label><br>
+        <div class="inputWithIcon">
+          <input class="input" type="text" name="cs" id="cs" placeholder="Enter your Salary"></input>
+          <i class="fa fa-money fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+      <!-- <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <label>Portfolio : </label><br>
+          <input type="file" name="file" id="port" multiple></input>
+      </div> -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <label>About you : </label><br>
+        <textarea style="margin: 10px;margin-left: -1px;" name="about" id="about" placeholder="such as I'm newbie programmer"
+          onchange="return checkabout()"></textarea>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <label>Experiece : </label><br>
+        <textarea style="margin: 10px;margin-left: -1px;" name="exp" id="exp" placeholder="Enter your Experiece"
+          onchange="return checkexp()"></textarea><br>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border: solid 2px #E0e0e0;background-color: white;"><br>
+        <div class="container-fluid" align="center">
+          <!-- <p id="re"></p> -->
+          <button class="btn-primary" style="margin-right: 15px;" type="submit" id="b1" value="Insert"><i style="margin-right:5px"
+              class="fa fa-edit"></i>Submit</button>
+          <button class="btn-warning" style="margin-left: 15px;" type="button" id="c1" value="Cancle" onclick="back()"><i
+              style="margin-right:5px" class="fa fa-remove"></i>Cancle</button><br><br>
+          <div id="loader" hidden></div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  function validate() {
+    var $result = $("#result");
+    var email = $("#mail").val();
+    $result.text("");
+
+    if (validateEmail(email)) {
+      // alert(email + " is valid :)")
+
+      // $result.text(email + " is valid :)");
+      // $result.css("color", "green");
+    } else {
+      // $result.text(email + " is not valid :(");
+      // $result.css("color", "red");
+      alert("your " + email + " is invalid !!!!!!!!!")
+      document.getElementById('mail').value = "";
+      $("#mail").focus();
+    }
+    return false;
+  }
+
+  $("#mail").bind("change", validate);
+</script>
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#picpreview').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#pic").change(function () {
+    readURL(this);
+  });
+</script>
+<script>
+  function back() {
+    window.location.reload();
+  }
+</script>
+<script>
+  dataget_db = [];
+  fetch('json/db.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (myJson) {
+      dataget_db = myJson.database
+      dataget_db.sort(function (a, b) {
+        var sort_db = a.name < b.name ? -1 : 1;
+        return sort_db
+      });
+      dynamicdropdown_db()
+    });
+</script>
+<script>
+  dataget_job = [];
+  fetch('json/position.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (myJson) {
+      dataget_job = myJson.job
+      dataget_job.sort(function (a, b) {
+        var sort_job = a.name < b.name ? -1 : 1;
+        return sort_job
+      });
+      dynamicdropdown_job()
+      dynamicdropdown_job_l()
+    });
+</script>
+<script>
+  function dynamicdropdown_db(listindexs) {
+    var html = '';
+    
+    html = html + '<select id="db" name="db" style="margin: 8px 0;margin-left: 1px;font-family: ' + 'Lora' + ', serif;">';
+    html = html + '<option value="0">Select </option>';
+    for (var i = 0; i < dataget_db.length; i++) {
+      html = html + '<option value="' + dataget_db[i].name + '">' + dataget_db[i].name + '</option>'
+    }
+    html = html + '</select>';
+    $('#mySelect_db').html(html)
+  }
+</script>
+<script>
+  dataget_os = { "os": [{ "id": "1", "name": "Windows" }, { "id": "2", "name": "MacOS" }, { "id": "3", "name": "LinuxOS" }] }
+  dataget_os.os.sort(function (a, b) {
+    var sort_os = a.name < b.name ? -1 : 1;
+    return sort_os
+  });
+  var html = '';
+  html = html + '<select id="os" name="op" style="margin: 8px 0;margin-left: 1px;font-family: ' + 'Lora' + ', serif;">';
+  html = html + '<option value="0">Select </option>';
+  for (var i = 0; i < dataget_os.os.length; i++) {
+    html = html + '<option value="' + dataget_os.os[i].name + '">' + dataget_os.os[i].name + '</option>'
+  }
+  html = html + '</select>';
+  $('#mySelect_os').html(html)
+
+</script>
+<script>
+  function dynamicdropdown_job(listindexs) {
+    var html = '';
+    html = html + '<select id="job" name="job" style="margin: 8px 0;margin-left: 1px;font-family: ' + 'Lora' + ', serif;"required>';
+    html = html + '<option value="0">Select </option>';
+    for (var i = 0; i < dataget_job.length; i++) {
+      html = html + '<option value="' + dataget_job[i].name + '">' + dataget_job[i].name + '</option>'
+    }
+    html = html + '</select>';
+    $('#mySelect_job').html(html)
+  }
+</script>
+<script>
+  function dynamicdropdown_job_l(listindexs) {
+    var html = '';
+    html = html + '<select id="job_l" name="job_lawa" style="margin: 8px 0;margin-left: 1px;font-family: ' + 'Lora' + ', serif;"required>';
+    html = html + '<option value="0">Select </option>';
+    for (var i = 0; i < dataget_job.length; i++) {
+      html = html + '<option value="' + dataget_job[i].name + '">' + dataget_job[i].name + '</option>'
+    }
+    html = html + '</select>';
+    $('#mySelect_job_l').html(html)
+  }
+</script>
+
+<div class="container">
+  <div class="row">
+    <div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<div align="center">
+  <footer>
+    <br>
+    <p style="color:white"> <a href="mailto:someone@example.com"></a>Copyright ©2018 Enterprise Computing Services
+      (Thailand) Co.,Ltd All rights reserved</p>
+    <br>
+  </footer>
+</div>
+
+<script>
+  function getRandomID(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  function new_id() {
+    var rndnum = getRandomID(1, 99999);
+    var id = ('0000' + rndnum).slice(-5);
+    id = 'UID' + id;
+    document.getElementById("id").value = id;
+    return id;
+  }
+  new_id()
+</script>
+<script>
+  function makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    // console.log(text);
+    document.getElementById("token").value = text;
+    // console.log(document.getElementById("token"));
+    return text;
+  }
+  document.getElementById("token").value = makeid();
+</script>
+<script>
+  function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 46 || charCode > 57))
+      return false;
+    return true;
+  }    
+</script>
+<script>
+  function isCharKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 41 || charCode > 57))
+      return true;
+    return false;
+  }    
+</script>
+<script>
+  const url = 'process.php';
+  const form = document.querySelector('form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const files = document.getElementById('pic').files;
+    const formData = new FormData();
+
+    for (let i = 0; i < files.length; i++) {
+      let file = files[i];
+      formData.append('files[]', file);
+    }
+    fetch(url, {
+      method: 'POST',
+      body: formData
+    }).then(response => {
+ 
+      document.myForm.submit();
+
+    });
+  });
+</script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script src="js/bootstrap-tagsinput.min.js"></script>
+<script src="js/bootstrap-tagsinput-angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/app_bs3.js"></script>
+<script src="js/checkvalidate.js"></script>
+<!-- <script src="js/upload.js"></script> -->
+<script src="js/bootstrap.min.js"></script>
+
+</html>

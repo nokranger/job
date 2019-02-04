@@ -1,0 +1,676 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Appscript_dev/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/Appscript_dev/css/bootstrap_1.css">
+    <!-- <link rel="stylesheet" href="css/social.css"> -->
+    <link rel="shortcut icon" type="image/png" href="/Appscript_dev/img/favicon.png" />
+
+    <link rel="stylesheet" href="/Appscript_dev/css/social_2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
+        crossorigin='anonymous'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="/Appscript_dev/css/show.css">
+    <script type="text/javascript" src="/Appscript_dev/js/session.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
+    
+    <style>
+        body{
+    background:	#f4f5f7;
+}
+label {
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+    color: white;
+}
+
+b {
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+    margin-left: 10px;
+    color: white;
+}
+
+.img-profile {
+    width: 170px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.dt-tag {
+    margin-left: 20px;
+}
+
+dd {
+    font-family: 'Lora', serif;
+    color: #696969;
+}
+
+a {
+    font-family: 'Lora', serif;
+    color: #696969;
+}
+.colorful-4 {
+    
+    background:
+    -webkit-linear-gradient(65deg, hsla(176.64, 68.42%, 59.02%, 1) 10%, hsla(176.64, 68.42%, 59.02%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(192.8, 73.21%, 43.92%, 1) 15%, hsla(192.8, 73.21%, 43.92%, 0) 80%),
+    -webkit-linear-gradient(205deg, hsla(240, 60.83%, 52.94%, 1) 100%, hsla(240, 60.83%, 52.94%, 0) 70%);
+  background:
+    linear-gradient(25deg, hsla(176.64, 68.42%, 59.02%, 1) 10%, hsla(176.64, 68.42%, 59.02%, 0) 80%),
+    linear-gradient(315deg, hsla(192.8, 73.21%, 43.92%, 1) 15%, hsla(192.8, 73.21%, 43.92%, 0) 80%),
+    linear-gradient(245deg, hsla(240, 60.83%, 52.94%, 1) 100%, hsla(240, 60.83%, 52.94%, 0) 70%);;
+}
+        button{
+    margin:10px;
+    padding: 8px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* box-sizing: border-box; */
+    font-family: 'Lora', serif;
+    cursor: pointer;
+}
+    .table-wrapper-scroll-y {
+display: block;
+max-height: 200px;
+overflow-y: auto;
+-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.cardP{
+    width:100%;
+    height:200px;
+    /* border: solid 2px black; */
+}
+    </style>
+    
+    <script>
+        if (Session.get("status") != 1) {
+            window.location.href = '\/Appscript_dev/login';
+        }
+    </script>
+    <script>
+        function exit(){
+            exit = document.getElementById("logout").value
+            // console.log(exit)
+            var confirmexit = confirm('Do you want to logout?')
+            if (exit== "logout") {
+                if(confirm){
+                    // console.log("exit")
+                            // alert("Logout successfully");
+                            Session.set("status", '0');
+                            window.location = "\/Appscript_dev/login"; // Redirecting to other page.
+                            return false;
+                }
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        var a,b,cc,d = "";
+        var script_url2 = "https://script.google.com/macros/s/AKfycbx11chHd4HssEp2hg_66KlJfrm2u5zd4dDbLmLCxGAa0ymMyoU3/exec";
+        function insert_value() {
+            set()
+            for (var i = 0; i < dataget.length; i++) {
+                    datagett[i] = dataget[i].ID.split('UID')
+                    datagetsplit = 'uid' + datagett[i][1]
+                    if ((dataget[i].ID) == getURL('id') || datagetsplit == getURL('id')) {
+                        urlf = "https://www.facebook.com/";
+                        urlg = "https://www.github.com/";
+                        urlln = "https://www.linkedin.com/in/";
+                        urlline = "https://line.me/ti/p/~";
+                        urldrive = "https://drive.google.com/uc?id=";
+                        splitpath = (dataget[i].Picture).split("\\");
+                        face = urlf + (dataget[i].Facebook)
+                        git = urlg + (dataget[i].Github);
+                        link = urlln + (dataget[i].Linkedin);
+                        line = urlline + (dataget[i].Line);
+                        drive = urldrive + (dataget[i].Picture);
+                        document.getElementById("uid").innerHTML = (dataget[i].ID);
+                        document.getElementById("tn").innerHTML = (dataget[i].Title_Name);
+                        document.getElementById("name").innerHTML = (dataget[i].First_Name);
+                        document.getElementById("lname").innerHTML = (dataget[i].Last_Name);
+                        tel = "tel:0" + dataget[i].Telephone_Number
+                        document.getElementById("tel").href = tel;
+                        document.getElementById("tel").innerHTML = "0" + dataget[i].Telephone_Number;
+                        // console.log("tel:0" + dataget[i].Telephone_Number)
+                        document.getElementById("fb").href = face;
+                        document.getElementById("line").href = line;
+                        document.getElementById("ln").href = link;
+                        document.getElementById("git").href = git;
+                        document.getElementById("gpa").innerHTML = dataget[i].GPAX;
+                        document.getElementById("sp").innerHTML = (dataget[i].Skill_programming);
+                        document.getElementById("tfp").innerHTML = (dataget[i].Tool_for_development);
+                        document.getElementById("spack").innerHTML = (dataget[i].Software_Package);
+                        document.getElementById("mail").innerHTML = (dataget[i].Email_Address);
+                        document.getElementById("pic").src = '/Appscript_dev/uploads/' + splitpath[2];
+                        document.getElementById("university").innerHTML = (dataget[i].Educational_institution);
+                        document.getElementById("major").innerHTML = (dataget[i].Major);
+                        document.getElementById("minor").innerHTML = (dataget[i].Minor);
+                        document.getElementById("ref").innerHTML = (dataget[i].Reference);
+                        document.getElementById("location").innerHTML = (dataget[i].Current_Address);
+                        document.getElementById("about").innerHTML = (dataget[i].About_you);
+                        document.getElementById("exp").innerHTML = (dataget[i].Experiece);
+                        var id1 = dataget[i].ID
+                        var name = dataget[i].First_Name
+                        var lname = dataget[i].Last_Name
+                        var tel = dataget[i].Telephone_Number
+                        var mail = dataget[i].Email_Address
+                        var pic = "C:\\fakepath\\" + splitpath[2]
+                        var token = dataget[i].Token
+                        var job = dataget[i].Position
+                        var sal = dataget[i].Salary
+                        break;
+                    }
+                }
+
+            var tn = $("#tn").val();
+
+            var dob = $("#dob").val();
+
+            var fb = $("#fb").val();
+            var line = $("#line").val();
+            var ig = $("#ig").val();
+            var aic = $("#aic").val();
+            var ca = $("#ca").val();
+            var ei = $("#ei").val();
+            var gpa = $("#gpa").val();
+            var sp = $("#sp").val();
+            var tfp = $("#tfp").val();
+            var spack = $("#spack").val();
+
+            var git = "";
+            var link = $("#link").val();
+            var major = $("#major").val();
+            var minor = $("#minor").val();
+            var about = $("#about").val();
+            
+            var exp = $("#exp").val();
+            var ref = $("#ref").val();
+
+            var height = $("#height").val();
+            var weight = $("#weight").val();
+            var age = $("#age").val();
+
+            var db = $("#db").val();
+            var os = $("#os").val();
+            var cen = $("#cen").val();
+            var job_l = $("#job_l").val();
+            var swd = $("#swd").val();
+            var dop = $("#dop").val();
+            var cs = $("#cs").val();
+            var port = $("#port").val();
+            var status = "accept"
+            a =name;
+            b=lname;
+            cc=job;
+            // console.log(cc)
+            d=mail;
+            // console.log(name+lname+job+mail)
+            // document.getElementById('ttn').value = "";
+            // document.getElementById('nname').value = name;
+            // document.getElementById('llname').value = lname;
+            // document.getElementById('cur_job').value = job;
+            // document.getElementById('emaill').value = mail;
+            
+            var url = script_url2 + "?callback&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&token=" + token + "&height=" + height + "&weight=" + weight + "&age=" + age + "&job=" + job + "&sal=" + sal + "&db=" + db + "&os=" + os + "&cen=" + cen + "&job_l=" + job_l + "&swd=" + swd + "&dop=" + dop + "&cs=" + cs + "&port=" + port + "&status=" + status + "&action=insert";
+
+            document.getElementById("myform").action = "mailer_invitation.php";
+            // document.getElementById("myform").action = "mailer_invitation.php";
+            var request = jQuery.ajax({
+                crossDomain: true,
+            url: url,
+            method: "GET",
+            dataType: "jsonp"
+        });
+
+        console.log('ok')
+        }
+    </script>
+    <script>
+        function confirmaccept(){
+            console.log('confirm')
+            
+            var c = confirm('Do you want to call for a job interview ?')
+            // set()
+            if(c){
+                insert_value()
+
+                document.getElementById('nname').value = a
+                document.getElementById('llname').value= b
+                document.getElementById('cur_job').value= cc
+                document.getElementById('emaill').value= d
+                $(this).closest().submit()
+            }
+        }
+    </script>
+
+    <script>
+        
+        var dataget;
+        var urljson = "https://script.googleusercontent.com/macros/echo?user_content_key=YqyDZdxWEJS-1VD3HmJyFI9BvM0A5G0iphXgnOTUPULhWNs15odVCFd5sYNaDSHk2eRS8CMAEH7Dz4211F5C_if3ieXETnZMm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnESenDeG1a2U5A9HgblmFIqgY1h708_S0WEz0UAVMSP1MOyWK_cu-E6ACoz3t86BEnltYe52Wkzn&lib=Mih9OC5pj5Vkn2Axmh0oYykMWxYDvAMv8";
+        $.getJSON(urljson, function (data) {
+            dataget = data.user
+            something();
+            set();
+        });
+        function something() {
+        }
+    </script>
+    <script>
+        function timeout() {
+            setTimeout(function () { window.location = "\/Appscript_dev/login"; }, 900000);
+            return hello()
+        }
+    </script>
+        <script>
+            var dataget_show;
+            var urlgetjson = "https://script.googleusercontent.com/macros/echo?user_content_key=Rhovnr2SMBbvOfc4gj8HcVozrPaXrDxEtPYmOLd9RcFdMm5gXjR7LMnqTgDIZRhUyi-BGOS2KaKxJWyaqbXZ3FVKOn5lH11zm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJ-6DN9EUk9ZPOj-B-R2zwTP9H44krKccRubK-dBVR4cw6EuNmReUpW9E-853UlZs6OIp7sEUsJ2&lib=MeIt-7TFX0jvpkH2yxhFycIkDlmeTZjk5";
+            $.getJSON(urlgetjson, function (data) {
+                dataget_show = data.user
+                showuser()
+            });
+            var a_user,acc_user,m_user = 0;
+            function showuser(){
+                a_user = dataget_show[0].insert
+                acc_user = dataget_show[0].accept
+                m_user = dataget_show[0].delete
+                document.getElementById('a_user').innerHTML = a_user
+                document.getElementById('acc_user').innerHTML = acc_user
+                document.getElementById('m_user').innerHTML = m_user
+                // console.log(a_user)
+                // console.log(dataget_show[0].insert)
+            }
+        </script>
+
+</head>
+
+<body onload="timeout()">
+        <form id="myform" name="myform"  method="POST" actions="/Appscript_dev/mailer_invitation.php"  onsubmit="javascript:confirmaccept()" enctype="multipart/form-data">
+        <input type="hidden" name="ttn" id="ttn"></input>
+        <input type="hidden" name="nname" id="nname" ></input>
+        <input type="hidden" name="llname" id="llname" ></input>
+        <input type="hidden" name="cur_job" id="cur_job" ></input>
+        <input type="hidden" name="emaill" id="emaill" ></input>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8">
+                </div>
+                <div class="col-4">
+                    <div class="d-flex justify-content-end">
+                        <div>
+                            <br>
+                            <button class="btn-danger" type="button" id="logout" value="logout" onclick="exit()">Logout</button></div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        <div style="margin:10px;border: solid 2px #E0e0e0;">
+                <div class="card-group">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h3><i class="icon-screen-desktop"></i></h3>
+                                                <p class="text-muted">All USER</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h2 class="counter text-primary" id="a_user" name="a_user"></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h3><i class="icon-note"></i></h3>
+                                                <p class="text-muted">USER ACCEPTED</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h2 class="counter text-warning" id="acc_user" name="acc_user"></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h3><i class="icon-doc"></i></h3>
+                                                <p class="text-muted">MISSING USER</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h2 class="counter text-info" id="m_user" name="m_user"></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h3><i class="icon-bag"></i></h3>
+                                                <p class="text-muted">LATEST USER</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="#" id="l_t" name="l_t"><h2 class="counter text-success" id="l_user" name="l_user"></h2></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        <div class="colorful-4" style="margin:10px;border: solid 2px #E0e0e0;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="colsm-12 col-md-12 col-lg-9 col-xl-9">
+                        <div style="border-bottom: solid 2px #E0e0e0;">
+                            <div class="d-flex justify-content-start">
+                                <div>
+                                    <b>ID : </b><label id="uid"></label>
+                                    <b>Name : </b><label id="tn"></label>&nbsp;<label id="name"></label>&nbsp;
+                                    <label id="lname"></label>&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border-bottom: solid 2px #E0e0e0;">
+                            <div class="d-flex justify-content-start">
+                                <div>
+                                    <b>Tel. : </b><a id="tel" href="" style="color: white"></a><br>
+                                    <b>E-mail : </b><label id="mail"></label><br>
+                                    <b>About you : </b><label id="about"></label><br>
+                                    <b>Position : </b><label id="job"></label>
+                                    <b>Current enterprise : </b><label id="cen"></label><br>
+                                    <b>Working position : </b><label id="job_l"></label><br>
+                                    <b>Start work date : </b><label id="swd"></label>
+                                    <b>Date of departure : </b><label id="dop"></label><br>
+                                    <b>Current salary : </b><label id="cs"></label><br>
+                                    <label><b>Experiece : </b></label>
+                                    <label name="exp" id="exp"></label><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colsm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="d-flex justify-content-start" style="margin-top:10px">
+                            <img id="pic" class="img-profile" src="/Appscript_dev/uploads/asdasd.PNG" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div>
+                            <div class="d-flex justify-content-start">
+                                <div>
+                                    <br><b>Programing language : </b><label id="sp"></label><br>
+                                    <b>Tool for development : </b><label id="tfp"></label><br>
+                                    <b>Operating System : </b><label id="os"></label><br>
+                                    <b>Software package : </b><label id="spack"></label><br>
+                                    <b>Social : </b><label></label><a id="fb" href="" target="_blank" class="fa fa-facebook-official"></a><a
+                                        id="ln" href="" target="_blank" class="fa fa-linkedin-square"></a><a id="git"
+                                        href="" target="_blank" class="fa fa-github"></a><a id="line" href="" target="_blank"
+                                        class="fab fa-line"></a><br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div>
+                            <div class="d-flex justify-content-start">
+                                <div>
+                                        <br><label><b>Education : </b><label><br>
+                                            <dt class="dt-tag">
+                                                <b>University : </b><label id="university"></label></dt>
+                                            <dd><b>Major : </b><label id="major"></label></dd>
+                                            <dd><b>Minor : </b><label id="minor"></label></dd>
+                                            <b>GPAX : </b><label id="gpa"></label><br>
+
+                                            <b>Location : </b><label id="location"></label><br>
+                                            <b>Reference : </b><label id="ref"></label><br>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="d-flex justify-content-end">
+                                <div>
+                                    <button class="btn-success" type="submit" onsubmit="javascript:confirmaccept()">Accept</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-end">
+                            <div style="margin:10px;">
+                                <!-- <form onsubmit="return getValue('commands')"> -->
+                                    <b style="color:#696969">Search : </b>
+                                    <input type="text" name="commands" id="commands" size="12" maxlength="8"  />
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="table-wrapper-scroll-y" style=" margin:10px;">
+            <!-- <p id="showData"></p> -->
+            <table class="table" id="jsonTable" style="visibility:hidden;width: 100%;">
+                <thead>
+                    <tr>
+                        <!-- The JSON downloaded from the URL above provides four attributes.-->
+                        <th class="table-primary">Picture</th>
+                        <th class="table-primary">UID</th>
+                        <th class="table-primary">Position</th>
+                        <th class="table-primary">Detail</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <script>
+                $(document).ready(function(){
+                  $("#commands").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#jsonTable tr").filter(function() {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                  });
+                });
+                </script>
+
+        <script>
+            var datagett = []
+            var urlf, urlg, urlln, urlline, urldrive, face, git, link, line, drive,coun;
+            function set() {
+                for (var i = 0; i < dataget.length; i++) {
+                    datagett[i] = dataget[i].ID.split('UID')
+                    datagetsplit = 'uid' + datagett[i][1]
+                    coun=i
+                    if ((dataget[i].ID) == getURL('id') || datagetsplit == getURL('id')) {
+                        urlf = "https://www.facebook.com/";
+                        urlg = "https://www.github.com/";
+                        urlln = "https://www.linkedin.com/in/";
+                        urlline = "https://line.me/ti/p/~";
+                        urldrive = "https://drive.google.com/uc?id=";
+                        splitpath = (dataget[i].Picture).split("\\");
+                        face = urlf + (dataget[i].Facebook)
+                        git = urlg + (dataget[i].Github);
+                        link = urlln + (dataget[i].Linkedin);
+                        line = urlline + (dataget[i].Line);
+                        drive = urldrive + (dataget[i].Picture);
+                        document.getElementById("uid").innerHTML = (dataget[i].ID);
+                        document.getElementById("tn").innerHTML = (dataget[i].Title_Name);
+                        document.getElementById("name").innerHTML = (dataget[i].First_Name);
+                        document.getElementById("lname").innerHTML = (dataget[i].Last_Name);
+                        tel = "tel:0" + dataget[i].Telephone_Number
+                        document.getElementById("tel").href = tel;
+                        document.getElementById("tel").innerHTML = "0" + dataget[i].Telephone_Number;
+                        // console.log("tel:0" + dataget[i].Telephone_Number)
+                        document.getElementById("fb").href = face;
+                        document.getElementById("line").href = line;
+                        document.getElementById("ln").href = link;
+                        document.getElementById("git").href = git;
+                        document.getElementById("gpa").innerHTML = dataget[i].GPAX;
+                        document.getElementById("sp").innerHTML = (dataget[i].Skill_programming);
+                        document.getElementById("tfp").innerHTML = (dataget[i].Tool_for_development);
+                        document.getElementById("spack").innerHTML = (dataget[i].Software_Package);
+                        document.getElementById("mail").innerHTML = (dataget[i].Email_Address);
+                        document.getElementById("pic").src = '/Appscript_dev/uploads/' + splitpath[2];
+                        document.getElementById("university").innerHTML = (dataget[i].Educational_institution);
+                        document.getElementById("major").innerHTML = (dataget[i].Major);
+                        document.getElementById("minor").innerHTML = (dataget[i].Minor);
+                        document.getElementById("ref").innerHTML = (dataget[i].Reference);
+                        document.getElementById("location").innerHTML = (dataget[i].Current_Address);
+                        document.getElementById("about").innerHTML = (dataget[i].About_you);
+                        document.getElementById("exp").innerHTML = (dataget[i].Experiece);
+                        document.getElementById("cen").innerHTML = (dataget[i].Current_enterprise);
+                        document.getElementById("job").innerHTML = (dataget[i].Position);
+                        document.getElementById("job_l").innerHTML = (dataget[i].Working_position);
+                        localtime2 = moment((dataget[i].Start_work_date)).format('YYYY-MM-DD')
+                        localtime3 = moment((dataget[i].Date_of_departure)).format('YYYY-MM-DD')
+                        document.getElementById("swd").innerHTML = localtime2;
+                        document.getElementById("dop").innerHTML = localtime3;
+                        document.getElementById("cs").innerHTML = (dataget[i].Current_salary);
+                        break;
+                    }
+                }
+                document.getElementById('l_user').innerHTML = dataget[coun].Position;
+                document.getElementById('l_t').href = '?id=' + dataget[coun].ID
+            }
+            function getURL(objN) {
+                if (objN == null) {
+                    return window.location.href;
+                } else {
+                    objN = objN.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                    var regexS = "[\\?&]" + objN + "=([^&#]*)";
+                    var regex = new RegExp(regexS);
+                    var results = regex.exec(window.location.href);
+                    if (results == null)
+                        return "";
+                    else
+                        return results[1];
+                }
+            }
+        </script>
+        <script>
+            function getValue(id) {
+                window.location.href = "";
+                text = document.getElementById(id).value; //value of the text input
+
+                window.location.href = '?id=' + document.getElementById(id).value;
+                return false;
+            }
+        </script>
+        <script>
+            var jsonget = [];
+            $.getJSON(urljson, function (data) {
+                for (var i = 0; i < data.user.length; i++) {
+                    jsonget[i] = [];
+                    // jsonget[i].ID = JSON.stringify(data.user[i].time_stamp);
+                    jsonget[i].ID = JSON.stringify(data.user[i].ID);
+                    jsonget[i].Skill_programming = JSON.stringify(data.user[i].Skill_programming);
+
+                    // jsonget[i].ID = JSON.parse(data.user[i].time_stamp);
+                    jsonget[i].ID = JSON.parse(jsonget[i].ID)
+                    jsonget[i].Skill_programming = JSON.parse(jsonget[i].Skill_programming)
+                    // console.log(jsonget[i].ID = JSON.parse(data.user[i].time_stamp))
+
+                }
+                something();
+                // CreateTableFromJSON();
+            });
+            function something() {
+
+            }
+        </script>
+        <script type="text/javascript">
+            function hello() {
+                //+
+                var kk = "?id="
+                var json;
+                urljson = "https://script.googleusercontent.com/macros/echo?user_content_key=YqyDZdxWEJS-1VD3HmJyFI9BvM0A5G0iphXgnOTUPULhWNs15odVCFd5sYNaDSHk2eRS8CMAEH7Dz4211F5C_if3ieXETnZMm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnESenDeG1a2U5A9HgblmFIqgY1h708_S0WEz0UAVMSP1MOyWK_cu-E6ACoz3t86BEnltYe52Wkzn&lib=Mih9OC5pj5Vkn2Axmh0oYykMWxYDvAMv8";
+                $.getJSON(urljson, function (data) {
+                    json = data.user
+                    // console.log('dataget')
+                    // console.log(json)
+                    $('#jsonTable').css("visibility", "visible");
+                    $('#jsonTable').append("<tbody>");
+                    for (var counter = 0; counter < json.length; counter++) {
+                        var splitpath = (json[counter].Picture).split("\\");
+                        // console.log('uploads/' + splitpath[2])
+                        $('#jsonTable').append("<tr><td>" + '<img style="width:90px;height110px;border-radius:50%;" src="' + '/Appscript_dev/uploads/' + splitpath[2] + '">' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + json[counter].ID + '</a>' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + json[counter].Position + '</a>' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + 'Viewmore...' + '</a>' + "</td></tr>");
+                    }
+                    $('#jsonTable').append("</tbody>");
+                    // $('th').css("border", "1px solid green");
+                });
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="/Appscript_dev/js/moment.js"></script>
+</body>
+
+</html>

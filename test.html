@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+<body>
+                          <!-- <select id="lookupcode_type"></select> -->
+                          
+                          
+                          <!-- <div id="myDiv3">Append here</div>
+                          <div id="myDiv2">Append here</div> -->
+                          <div><Label>Province :</Label> <br>
+                          <div id="mySelect_1" name="mySelect_1"></div><br></div>
+                          <div><Label>Districts :</Label> <br>
+                          <div id="mySelect_2" name="mySelect_2"></div><br></div>
+                          <div><Label>Subdistricts :</Label> <br>
+                          <div id="mySelect_3" name="mySelect_3"></div></div>
+                          <!-- <div><Label>Test :</Label> <br>
+                            <div id="mySelect_4" name="mySelect_4"></div></div> -->
+                          
+
+                          
+
+                          
+  
+</body>
+<script>
+dataget_p = [];
+dataget_d = [];
+dataget_s = [];
+dataget_a = [];
+// console.log((dataget_p));
+fetch('js/province_2.json')
+  .then(function(response) {
+    return response.json();
+    
+  })
+  .then(function(myJson) {
+    // console.log((myJson.districts));
+    // console.log((myJson.subdistricts));
+    dataget_a = myJson
+    dataget_p = myJson.provinces
+    dataget_d = myJson.districts
+    dataget_s = myJson.subdistricts
+    // console.log((dataget_p));
+    // console.log((dataget_d));
+    // console.log((dataget_s));
+    getJSONcountry()
+    dynamicdropdown()
+    dynamicdropdown_2()
+
+    // var array = ["Select province","Saab","Mercades","Audi"];
+
+//Create and append select list
+// var selectList = document.createElement("select");
+// selectList.setAttribute("id", "mySelect");
+// myDiv.appendChild(selectList);
+
+//Create and append the options
+// for (var i = 0; i < myJson.length; i++) {
+//     var option = document.createElement("option");
+//     option.setAttribute("value", myJson[i].enName);
+//     option.text = myJson[i].enName;
+//     selectList.appendChild(option);
+    
+// }
+//   console.log(('i'));
+  // console.log((myJson.provinces));
+  });
+
+  // console.log(('i'));
+  // console.log((aa));
+//   function aa(){
+
+
+//   let arr = myJson.reduce((acc, cur) => {
+//             let index = acc.findIndex(el => el.id === cur.id);
+//             if (index > -1) {
+//                 acc[index].name_in_thai = [...acc[index].name_in_thai, ...cur.name_in_thai]
+//                 return acc
+//             } else {
+//                 return [...acc, cur]
+//             }
+//         }, [])
+
+//         myJson = arr;
+//         console.log(typeof (myJson));
+//         console.log(myJson);
+//         console.log(myJson[1]);
+
+// }
+</script>   
+<script>
+function getJSONcountry(){
+  // console.log((dataget_p));
+  var province = document.getElementById("mySelect_1");
+  var districts = document.getElementById("mySelect_2");
+  var subdistricts = document.getElementById("mySelect_3");
+  // var myJson = ""
+  // var myDiv = document.getElementById("myDiv");
+
+//Create array of options to be added
+// var array = ["Volvo","Saab","Mercades","Audi"];
+
+//Create and append select list
+var selectList_p = document.createElement("select");
+selectList_p.setAttribute("id", "province");
+selectList_p.setAttribute("name", "province");
+selectList_p.setAttribute("onchange", "javascript: dynamicdropdown(this.options[this.selectedIndex].value);");
+province.appendChild(selectList_p);
+
+var selectList_d = document.createElement("select");
+selectList_d.setAttribute("id", "districts");
+selectList_d.setAttribute("name", "districts");
+selectList_d.setAttribute("onchange", "javascript: dynamicdropdown_2(this.options[this.selectedIndex].value);");
+districts.appendChild(selectList_d);
+
+var selectList_s = document.createElement("select");
+selectList_s.setAttribute("id", "subdistricts");
+selectList_s.setAttribute("name", "subdistricts");
+// selectList_s.setAttribute("onchange", "javascript: dynamicdropdown_3(this.options[this.selectedIndex].value);");
+subdistricts.appendChild(selectList_s);
+
+//Create and append the options
+for (var i = 0; i < dataget_p.length; i++) {
+    var option = document.createElement("option");
+    option.setAttribute("value", dataget_p[i].p_name_in_english);
+    option.text = dataget_p[i].p_name_in_english;
+    selectList_p.appendChild(option);
+    
+
+}
+for (var i = 0; i < dataget_d.length; i++) {
+    var option = document.createElement("option");
+    option.setAttribute("value", dataget_d[i].d_name_in_english);
+    option.text = dataget_d[i].d_name_in_english;
+    selectList_d.appendChild(option);
+
+}
+for (var i = 0; i < dataget_s.length; i++) {
+    var option = document.createElement("option");
+    option.setAttribute("value", dataget_s[i].name_in_english);
+    option.text = dataget_s[i].name_in_english;
+    // if( option.setAttribute("value", dataget_s[i].name_in_english) == null && option.text == null){
+    //   option.setAttribute("value","");
+    //   option.text = "";
+    // }
+    selectList_s.appendChild(option);
+    
+
+}
+
+
+// console.log('Dp_id ' + dataget_a.districts[2].district_id + ' Dp_name ' + dataget_a.districts[2].d_name_in_english)
+
+$('#province').val('');
+
+$('#subdistricts').val('');
+var sel = document.getElementById('province')
+console.log(sel)
+opt = sel.options[sel.selectedIndex];
+console.log( opt.value );
+console.log( opt.text );
+// $('#province').val("2");
+console.log((i));
+// dynamicdropdown();
+}
+
+</script>
+<!-- <script>
+  var dataget = [];
+  var urljson = "js/province_2.json";
+  $.getJSON(urljson, function (data) {
+    dataget = data.user
+  });
+</script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> -->
+<script>
+function dynamicdropdown(listindex){
+count_d =0;
+// console.log(listindex)
+// var myDiv = document.getElementById("mySelect_4");
+
+//Create array of options to be added
+// var array = ["Volvo","Saab","Mercades","Audi"];
+
+//Create and append select list
+// var selectList = document.createElement("select");
+// selectList.setAttribute("id", "mySelect");
+// myDiv.appendChild(selectList);
+
+for(i =0;i<dataget_a.provinces.length;i++){
+  if(listindex == dataget_a.provinces[i].p_name_in_english){
+    // console.log(dataget_a.provinces[i].p_name_in_english)
+    if(dataget_a.provinces[i].p_name_in_english){
+      // console.log(dataget_a.provinces[i].province_id)
+      for(j=0;j<dataget_a.districts.length;j++){
+        if(dataget_a.districts[j].province_id == dataget_a.provinces[i].province_id){
+
+        console.log('p_id ' + dataget_a.provinces[i].province_id + ' p_name ' + dataget_a.provinces[i].p_name_in_english)
+        // console.log()
+        // console.log()
+        // console.log()
+        console.log('Dp_id ' + dataget_a.districts[j].district_id + ' Dp_name ' + dataget_a.districts[j].d_name_in_english)
+        
+        $('#districts').val(dataget_a.districts[j].d_name_in_english);
+        console.log(dataget_a.districts[j].d_name_in_english)
+        
+        for(k=0;k<dataget_a.subdistricts.length;k++){
+          if(dataget_a.subdistricts[k].district_id == dataget_a.districts[j].district_id){
+            console.log(dataget_a.subdistricts[k].district_id)
+            console.log(dataget_a.districts[j].district_id)
+            console.log(k)
+            $('#subdistricts').val(dataget_a.subdistricts[k].name_in_english);
+            console.log(dataget_a.subdistricts[k].name_in_english)
+          }
+
+        }
+//Create and append the options
+        // getJSONcountry()
+        // console.log()
+        // console.log()
+        // console.log()
+        // console.log(j)
+        count_d = j
+        break;
+      }
+
+      
+  }
+    }
+  // $('#districts').val('Chatuchak');
+}else{
+  // $('#districts').val('Phra Nakhon');
+}
+}
+// console.log(count_d)
+// for (var k = 0; k < dataget_a.districts[count_d].district_id.length; k++) {
+//   console.log(dataget_a.districts[count_d].district_id.length)
+//     var option = document.createElement("option");
+//     option.setAttribute("value", dataget_a.districts[k].d_name_in_english);
+//     option.text = dataget_a.districts[k].d_name_in_english;
+//     selectList.appendChild(option);
+//     console.log(option.setAttribute("value", dataget_a.districts[k].d_name_in_english))
+//       console.log(option.text = dataget_a.districts[k].d_name_in_english)
+//         console.log(selectList.appendChild(option))
+// }
+
+
+
+// console.log(dataget_a)
+
+
+}
+</script>
+<script>
+  function dynamicdropdown_2(listindex_2){
+  count_d =0;
+  
+  for(i =0;i<dataget_a.districts.length;i++){
+    if(listindex_2 == dataget_a.districts[i].d_name_in_english){
+      // console.log(dataget_a.provinces[i].p_name_in_english)
+      if(dataget_a.districts[i].d_name_in_english){
+        // console.log(dataget_a.provinces[i].province_id)
+        for(j=0;j<dataget_a.subdistricts.length;j++){
+          if(dataget_a.subdistricts[j].district_id == dataget_a.districts[i].district_id){
+  
+          console.log('d_id ' + dataget_a.districts[i].district_id + ' d_name ' + dataget_a.districts[i].d_name_in_english)
+
+          console.log('s_id ' + dataget_a.subdistricts[j].district_id + ' s_name ' + dataget_a.subdistricts[j].name_in_english)
+          
+          $('#subdistricts').val(dataget_a.subdistricts[j].name_in_english);
+          console.log(dataget_a.subdistricts[j].name_in_english)
+          console.log(i)
+          console.log(j)
+          
+          // for(k=0;k<dataget_a.subdistricts.length;k++){
+          //   if(dataget_a.subdistricts[k].district_id == dataget_a.districts[j].district_id){
+          //     console.log(dataget_a.subdistricts[k].district_id)
+          //     console.log(dataget_a.districts[j].district_id)
+          //     console.log(k)
+          //     $('#subdistricts').val(dataget_a.subdistricts[k].name_in_english);
+          //     console.log(dataget_a.subdistricts[k].name_in_english)
+          //   }
+  
+          // }
+
+          count_d = j
+          break;
+        }
+  
+        
+    }
+      }
+    // $('#districts').val('Chatuchak');
+  }else{
+    // $('#districts').val('Phra Nakhon');
+  }
+  }
+
+  }
+  </script>
+ <!-- <script>
+    function dynamicdropdown_3(listindex_3){
+    count_d =0;
+
+    for(i =0;i<dataget_a.provinces.length;i++){
+      if(listindex_3 == dataget_a.provinces[i].p_name_in_english){
+        // console.log(dataget_a.provinces[i].p_name_in_english)
+        if(dataget_a.provinces[i].p_name_in_english){
+          // console.log(dataget_a.provinces[i].province_id)
+          for(j=0;j<dataget_a.districts.length;j++){
+            if(dataget_a.districts[j].province_id == dataget_a.provinces[i].province_id){
+    
+            console.log('p_id ' + dataget_a.provinces[i].province_id + ' p_name ' + dataget_a.provinces[i].p_name_in_english)
+            // console.log()
+            // console.log()
+            // console.log()
+            console.log('Dp_id ' + dataget_a.districts[j].district_id + ' Dp_name ' + dataget_a.districts[j].d_name_in_english)
+            
+            $('#districts').val(dataget_a.districts[j].d_name_in_english);
+            console.log(dataget_a.districts[j].d_name_in_english)
+            
+            for(k=0;k<dataget_a.subdistricts.length;k++){
+              if(dataget_a.subdistricts[k].district_id == dataget_a.districts[j].district_id){
+                console.log(dataget_a.subdistricts[k].district_id)
+                console.log(dataget_a.districts[j].district_id)
+                console.log(k)
+                $('#subdistricts').val(dataget_a.subdistricts[k].name_in_english);
+                console.log(dataget_a.subdistricts[k].name_in_english)
+              }
+    
+            }
+
+            count_d = j
+            break;
+          }
+    
+          
+      }
+        }
+      // $('#districts').val('Chatuchak');
+    }else{
+      // $('#districts').val('Phra Nakhon');
+    }
+    }
+    }
+    </script>  -->
+
+</html>

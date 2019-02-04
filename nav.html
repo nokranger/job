@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <link rel="stylesheet" href="css/edit.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/multiple-select.css" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <style>
+        
+    </style>
+    <!-- <script src="/scripts/snippet-javascript-console.min.js?v=1"></script> -->
+    <link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.css"> -->
+    <link rel="stylesheet" href="assets/app.css">
+    <title>Form Delete</title>
+    <style>
+      body{
+        background:
+      -webkit-linear-gradient(206deg, hsla(160.97, 0%, 100%, 1) 0%, hsla(160.97, 0%, 100%, 0) 65%),
+      -webkit-linear-gradient(135deg, hsla(225, 71.88%, 60.92%, 1) 15%, hsla(225, 71.88%, 60.92%, 0) 80%),
+      -webkit-linear-gradient(205deg, hsla(221.89, 100%, 55%, 1) 100%, hsla(221.89, 100%, 55%, 0) 70%);
+    background:
+      linear-gradient(244deg, hsla(160.97, 0%, 100%, 1) 0%, hsla(160.97, 0%, 100%, 0) 65%),
+      linear-gradient(315deg, hsla(225, 71.88%, 60.92%, 1) 15%, hsla(225, 71.88%, 60.92%, 0) 80%),
+      linear-gradient(245deg, hsla(221.89, 100%, 55%, 1) 100%, hsla(221.89, 100%, 55%, 0) 70%);
+          }
+    </style>
+    <style>
+      .dropbtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        font-family: 'Lora', serif;
+        margin:5px;
+      }
+      
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Lora', serif;
+      }
+      
+      .dropdown a:hover {background-color: #ddd;}
+      
+      .show {display: block;}
+      button{
+      margin:10px;
+      padding: 8px 20px;
+      /* margin: 8px 0; */
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      /* box-sizing: border-box; */
+      font-family: 'Lora', serif;
+  }
+  .img-profile {
+      width: 200px;
+      height: 200px;
+      border-radius: 8px;
+      margin: 10px;
+      border: solid 2px #E0e0e0;
+  }
+  b{
+    font-family: 'Lora', serif;
+  
+    }
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  .alert.success {background-color: #4CAF50;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #ff9800;}
+  
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+      </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+            // var script_url = "https://script.google.com/macros/s/AKfycbxK2iIUDRl0why8RquQ1gCDH9qYQBHxXMRQADkGqAqcz6DXOwwT/exec";//11
+            var script_url = "https://script.google.com/macros/s/AKfycbxBW4B33KJY1XuZ5nrtWxw9z8yUDLxzVzeY7_1WPq-DUxs3H_bm/exec"; //app form
+            // Make an AJAX call to Google Script
+            function insert_value() {
+              $("#re").css("visibility", "hidden");
+              document.getElementById("loader").style.visibility = "visible";
+              $('#mySpinner').addClass('spinner');
+              var id1 = $("#id").val();
+              var tn = $("#tn").val();
+              var name = $("#name").val();
+              var lname = $("#lname").val();
+              var dob = $("#dob").val();
+              var tel = $("#tel").val();
+              var fb = $("#fb").val();
+              var line = $("#line").val();
+              var ig = $("#ig").val();
+              var aic = $("#aic").val();
+              var ca = $("#ca").val();
+              var ei = $("#ei").val();
+              var gpa = $("#gpa").val();
+              var sp = $("#sp").val();
+              var tfp = $("#tfp").val();
+              var spack = $("#spack").val();
+              var mail = $("#mail").val();
+              var git = $("#git").val();
+              var link = $("#link").val();
+              var major = $("#major").val();
+              var minor = $("#minor").val();
+              var about = $("#about").val();
+              var pic = $("#pic").val();
+              var exp = $("#exp").val();
+              var ref = $("#ref").val();
+              // var sum = $("#id").val(); + $("#name").val(); + $("#lname").val();
+              console.log($("#id").val());
+              console.log($("#name").val());
+              console.log($("#lname").val());
+              // console.log(data44[1].time_stamp);
+              // var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname +"&action=insert";
+              // var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&action=insert";
+              var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&action=insert";
+              console.log(url);
+              var request = jQuery.ajax({
+                crossDomain: true,
+                url: url,
+                method: "GET",
+                dataType: "jsonp"
+              });
+            }
+            function update_value() {
+              $("#re").css("visibility", "hidden");
+              document.getElementById("loader").style.visibility = "visible";
+              var id1 = $("#id").val();
+              var tn = $("#tn").val();
+              var name = $("#name").val();
+              var lname = $("#lname").val();
+              var dob = $("#dob").val();
+              var tel = $("#tel").val();
+              var fb = $("#fb").val();
+              var line = $("#line").val();
+              var ig = $("#ig").val();
+              var aic = $("#aic").val();
+              var ca = $("#ca").val();
+              var ei = $("#ei").val();
+              var gpa = $("#gpa").val();
+              var sp = $("#sp").val();
+              var tfp = $("#tfp").val();
+              var spack = $("#spack").val();
+              var mail = $("#mail").val();
+              var git = $("#git").val();
+              var link = $("#link").val();
+              var major = $("#major").val();
+              var minor = $("#minor").val();
+              var about = $("#about").val();
+              var pic = $("#pic").val();
+              var exp = $("#exp").val();
+              var ref = $("#ref").val();
+              var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&action=update";
+              var request = jQuery.ajax({
+                crossDomain: true,
+                url: url,
+                method: "GET",
+                dataType: "jsonp"
+              });
+            }
+            function delete_value() {
+              $("#re").css("visibility", "hidden");
+              document.getElementById("loader").style.visibility = "visible";
+              $('#mySpinner').addClass('spinner');
+              var id1 = $("#id").val();
+              var tn = $("#tn").val();
+              var name = $("#name").val();
+              var lname = $("#lname").val();
+              var dob = $("#dob").val();
+              var tel = $("#tel").val();
+              var fb = $("#fb").val();
+              var line = $("#line").val();
+              var ig = $("#ig").val();
+              var aic = $("#aic").val();
+              var ca = $("#ca").val();
+              var ei = $("#ei").val();
+              var gpa = $("#gpa").val();
+              var sp = $("#sp").val();
+              var tfp = $("#tfp").val();
+              var spack = $("#spack").val();
+              var mail = $("#mail").val();
+              var git = $("#git").val();
+              var link = $("#link").val();
+              var major = $("#major").val();
+              var minor = $("#minor").val();
+              var about = $("#about").val();
+              var pic = $("#pic").val();
+              var exp = $("#exp").val();
+              var ref = $("#ref").val();
+              var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&action=delete";
+              // var sss = "https://docs.google.com/spreadsheets/d/1duiJZGrAchzeMIbKzbsa5pM8T2-lkfbJJtZtTE5evTk/edit?usp=sharing";
+              var request = jQuery.ajax({
+                crossDomain: true,
+                url: url,
+                method: "GET",
+                dataType: "jsonp"
+              });
+              document.getElementById("picbefore").src = "uploads/asdasd.PNG";
+              // document.getElementById("sp").value = '';
+              var elt = $('.example_typeahead > > input');
+              elt.tagsinput('destroy');
+              // piccheck  = document.getElementById('pic').value
+              document.getElementById("myForm").reset();
+              // document.getElementById("alert").innerHTML = '';
+              // document.getElementById("alert2").innerHTML = '';
+        
+              $("#re").css("visibility", "hidden");
+              document.getElementById("loader").style.visibility = "visible";
+              back();
+            }
+            // print the returned data
+            function ctrlq(e) {
+              $("#re").html(e.result);
+              $("#re").css("visibility", "visible");
+              read_value();
+            }
+            function read_value() {
+              $("#re").css("visibility", "hidden");
+              document.getElementById("loader").style.visibility = "visible";
+              var url = script_url + "?action=read";
+              $.getJSON(url, function (json) {
+                // Set the variables from the results array
+                // CREATE DYNAMIC TABLE.
+                var table = document.createElement("table");
+                var header = table.createTHead();
+                var row = header.insertRow(0);
+                // for(var k =0;k<16;k++){
+                // }
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
+                var cell8 = row.insertCell(7);
+                var cell9 = row.insertCell(8);
+                var cell10 = row.insertCell(9);
+                var cell11 = row.insertCell(10);
+                var cell12 = row.insertCell(11);
+                var cell13 = row.insertCell(12);
+                var cell14 = row.insertCell(13);
+                var cell15 = row.insertCell(14);
+                var cell16 = row.insertCell(15);
+                var cell17 = row.insertCell(16);
+                var cell18 = row.insertCell(17);
+                var cell19 = row.insertCell(18);
+                var cell20 = row.insertCell(19);
+                var cell21 = row.insertCell(20);
+                var cell22 = row.insertCell(21);
+                var cell23 = row.insertCell(22);
+                var cell24 = row.insertCell(23);
+                var cell25 = row.insertCell(24);
+                cell1.innerHTML = "<b>ID</b>";
+                cell2.innerHTML = "<b>Title_Name</b>";
+                cell3.innerHTML = "<b>First_Name</b>";
+                cell4.innerHTML = "<b>Last_Name</b>";
+                cell5.innerHTML = "<b>Date_of_birth</b>";
+                cell6.innerHTML = "<b>Telephone_Number</b>";
+                cell7.innerHTML = "<b>Facebook</b>";
+                cell8.innerHTML = "<b>Line</b>";
+                cell9.innerHTML = "<b>Instagram</b>";
+                cell10.innerHTML = "<b>Address_in_ID_Card</b>";
+                cell11.innerHTML = "<b>Current_Address</b>";
+                cell12.innerHTML = "<b>Educational_institution</b>";
+                cell13.innerHTML = "<b>GPAX</b>";
+                cell14.innerHTML = "<b>Skill_programming</b>";
+                cell15.innerHTML = "<b>Tool_for_development</b>";
+                cell16.innerHTML = "<b>Software_Package</b>";
+                cell17.innerHTML = "<b>Email_Address</b>";
+                cell18.innerHTML = "<b>Github</b>";
+                cell19.innerHTML = "<b>Linkedin</b>";
+                cell20.innerHTML = "<b>Major</b>";
+                cell21.innerHTML = "<b>Minor</b>";
+                cell22.innerHTML = "<b>About_you</b>";
+                cell23.innerHTML = "<b>Picture</b>";
+                cell24.innerHTML = "<b>Experiece</b>";
+                cell25.innerHTML = "<b>Reference</b>";
+                // ADD JSON DATA TO THE TABLE AS ROWS.
+                for (var i = 0; i < json.records.length; i++) {
+                  tr = table.insertRow(-1);
+                  var tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].ID;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Title_Name;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].First_Name;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Last_Name;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Date_of_birth;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Telephone_Number;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Facebook;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Line;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Instagram;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Address_in_ID_Card;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Current_Address;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Educational_institution;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].GPAX;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Skill_programming;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Tool_for_development;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Software_Package;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Email_Address;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Github;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Linkedin;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Major;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Minor;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].About_you;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Picture;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Experiece;
+                  tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = json.records[i].Reference;
+                }
+                // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+                var divContainer = document.getElementById("showData");
+                // divContainer.innerHTML = "";
+                // divContainer.appendChild(table);
+                document.getElementById("loader").style.visibility = "hidden";
+                $("#re").css("visibility", "visible");
+              });
+            }
+          </script>
+        
+    </head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <!-- <img src="https://picsum.photos/140/70" width="140" height="70" alt="Logo"> -->
+       </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+
+        <div class="collapse navbar-collapse flex-column align-items-end" id="navbarCollapse">
+            <!-- navbar1 -->
+            <div class="navbar-nav mb-lg-0">
+                <a class="nav-item nav-link" href="#">(00) 1234567</a>
+            </div>
+
+            <!-- navbar2 -->
+            <ul class="navbar-nav mt-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Free Cookies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div align="left">
+        <form id="myForm" action="javascript:delete_value()" method="POST">
+          <div>
+            <div class="container">
+              <div class="row">
+                <div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <br>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+                    <b style="font-size: 20px;">Check your Information</b>
+                    <label style="text-align:right" id="alert"></label>
+                    <label style="text-align:right" id="alert2"></label>
+                    <!-- <div id="alert" class="alert success">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>success!</strong> Your id and token is correct
+                            </div>
+                          <div id="alert2" class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                            <strong>Danger!</strong> Your id and token is incorrect
+                          </div> -->
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                  <label><b style="color:red">* </b>ID :</label><br>
+                  <input type="text" name="id" id="id" maxlength="8" required>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                  <label><b style="color:red">* </b>Token :</label><br>
+                  <input type="text" name="token" id="token" maxlength="5" required></input>
+                  <button type="button" onclick="getValue()">Click</button>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                  <label style="color: white">T</label><br>
+                  <button type="button" onclick="back()">Reset id</button>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <br>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+                    <b style="font-size: 20px;">Picture</b>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" align="center">
+                  <br>
+                  <div>
+                    <img id="picbefore" class="img-profile" src="uploads/asdasd.PNG" alt="">
+                  </div>
+                  <label>Your picture</label><br>
+                  <!-- <input type="file" name="files[]" id="pic" multiple></input> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+                  <b style="font-size: 20px;">Personal Information</b>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Title Name : </label><br>
+                <select name="tn" id="tn" style="margin: 8px 0;margin-left: 10px;">
+                  <option value="Mr.">Mr.</option>
+                  <option value="Ms.">Ms.</option>
+                  <option value="Mrs.">Mrs.</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>First Name : </label><br>
+                <input type="text" name="name" id="name" placeholder="Enter your first name" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Last Name : </label><br>
+                <input type="text" name="lname" id="lname" placeholder="Enter your last name" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Date of birth : </label><br>
+                <input type="date" name="dob" id="dob" max="2100-12-31">
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Telephone Number : </label><br>
+                <input type="tel" name="tel" id="tel" placeholder="0213456789" maxlength="10" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Email Address : </label><br>
+                <input type="email" name="mail" id="mail" placeholder="Enter E-mail  address" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Address in ID Card : </label><br>
+                <input type="text" name="aic" id="aic" placeholder="Enter your address" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Current Address : </label><br>
+                <input type="text" name="ca" id="ca" placeholder="Enter your address" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Reference : </label><br>
+                <input type="text" name="ref" id="ref" placeholder="Enter Who can Reference for you" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Educational institution : </label><br>
+                <input type="text" name="ei" id="ei" placeholder="Enter your University" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Major : </label><br>
+                <input type="text" name="major" id="major" placeholder="Enter your Major" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Minor : </label><br>
+                <input type="text" name="minor" id="minor" placeholder="Enter your Minor" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>GPAX : </label><br>
+                <input type="text" name="gpa" id="gpa" placeholder="Enter GPA" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="example example_typeahead">
+                  <div class="bs-example">
+                    <label>Skill programming : </label>
+                    <input style="padding: 14px 15px;" type="text" name="sp" id="sp" placeholder="Programming language">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Tool for development : </label><br>
+                <input type="text" name="tfp" id="tfp" placeholder="Vscode Etc." readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"><label>Software Package : </label><br>
+                <input type="text" name="spack" id="spack" placeholder="ORACLE Etc." readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"><label>About you : </label><br>
+                <textarea style="margin: 10px;" name="about" id="about" placeholder="such as I'm newbie programmer"
+                  readonly></textarea>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"><label>Experiece : </label><br>
+                <textarea style="margin: 10px;" name="exp" id="exp" placeholder="Enter your Experiece" readonly></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="border: solid 2px #E0e0e0;background-color: white;">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border-bottom: solid 2px #E0e0e0;">
+                  <b style="font-size: 20px;">Social</b>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label>Facebook : </label><br>
+                <input type="text" name="fb" id="fb" placeholder="Enter your facebook id" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label>Line : </label><br>
+                <input type="text" name="line" id="line" placeholder="Enter your id line" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label>Instagram : </label><br>
+                <input type="text" name="ig" id="ig" placeholder="Enter your Instagram" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label>Github: </label><br>
+                <input type="text" name="git" id="git" placeholder="Enter your Github" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <label>Linkedin: </label><br>
+                <input type="text" name="link" id="link" placeholder="Enter your Linkedin" readonly>
+              </div>
+              <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" align="center">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="border: solid 2px #E0e0e0;background-color: white;"><br>
+                <!-- <p id="re"></p> -->
+                <input style="margin-right: 15px;" type="submit" id="b1" value="Delete"></input>
+                <input style="margin-left: 15px;" type="button" id="c1" value="Cancle" onclick="back()"></input><br><br>
+                <div id="loader" hidden></div>
+                <!-- <input type="button" id="b2" onclick="read_value()" value="Read"></input>
+                  <input type="submit" id="b3" onclick="update_value()" value="Update"></input>
+                  <input type="button" id="b4" onclick="delete_value()" value="Delete"></input> -->
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- <a href="https://docs.google.com/spreadsheets/d/1duiJZGrAchzeMIbKzbsa5pM8T2-lkfbJJtZtTE5evTk/edit?usp=sharing"
+              target="_blank">Click here to open Spread Sheet </a> -->
+    
+        <!-- this for show data in ss after insert or click read -->
+        <!-- <div style="overflow: scroll" id="showData"></div> -->
+      </div>
+    </body>
+    <script>
+      function back() {
+        window.location.reload();
+      }
+    </script>
+    <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+    
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div align="center">
+      <footer>
+        <br>
+        <p style="color:white"> <a href="mailto:someone@example.com"></a>Copyright ©2018 Enterprise Computing Services
+          (Thailand) Co.,Ltd All rights reserved</p>
+        <br>
+      </footer>
+    </div>
+    <script>
+      function getRandomID(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      function new_id() {
+        var rndnum = getRandomID(1, 99999);
+        var id = ('0000' + rndnum).slice(-5);
+        id = 'UID' + id;
+        // document.getElementById("id").value = id;
+        return id;
+      }
+      console.log(new_id());
+    </script>
+    <script>
+      function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    
+        for (var i = 0; i < 5; i++)
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+        return text;
+      }
+    
+      console.log(makeid());
+    </script>
+    <script>
+      function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 46 || charCode > 57))
+          return false;
+        return true;
+      }    
+    </script>
+    <script>
+      function isCharKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 41 || charCode > 57))
+          return true;
+        return false;
+      }    
+    </script>
+    
+    <script>
+      var dataget = [];
+      var urljson = "https://script.googleusercontent.com/macros/echo?user_content_key=YqyDZdxWEJS-1VD3HmJyFI9BvM0A5G0iphXgnOTUPULhWNs15odVCFd5sYNaDSHk2eRS8CMAEH7Dz4211F5C_if3ieXETnZMm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnESenDeG1a2U5A9HgblmFIqgY1h708_S0WEz0UAVMSP1MOyWK_cu-E6ACoz3t86BEnltYe52Wkzn&lib=Mih9OC5pj5Vkn2Axmh0oYykMWxYDvAMv8";
+      $.getJSON(urljson, function (data) {
+        dataget = data.user
+        // for (var i = 0; i < data.user.length; i++) {
+        //   dataget[i] = [];
+        //   dataget[i].time_stamp = JSON.stringify(data.user[i].time_stamp);
+        //   dataget[i].ID = JSON.stringify(data.user[i].ID);
+        //   dataget[i].Title_Name = JSON.stringify(data.user[i].Title_Name);
+        //   dataget[i].First_Name = JSON.stringify(data.user[i].First_Name);
+        //   dataget[i].Last_Name = JSON.stringify(data.user[i].Last_Name);
+        //   dataget[i].Date_of_birth = JSON.stringify(data.user[i].Date_of_birth);
+        //   dataget[i].Telephone_Number = JSON.stringify(data.user[i].Telephone_Number);
+        //   dataget[i].Facebook = JSON.stringify(data.user[i].Facebook);
+        //   dataget[i].Line = JSON.stringify(data.user[i].Line);
+        //   dataget[i].Instagram = JSON.stringify(data.user[i].Instagram);
+        //   dataget[i].Address_in_ID_Card = JSON.stringify(data.user[i].Address_in_ID_Card);
+        //   dataget[i].Current_Address = JSON.stringify(data.user[i].Current_Address);
+        //   dataget[i].Educational_institution = JSON.stringify(data.user[i].Educational_institution);
+        //   dataget[i].GPAX = JSON.stringify(data.user[i].GPAX);
+        //   dataget[i].Skill_programming = JSON.stringify(data.user[i].Skill_programming);
+        //   dataget[i].Tool_for_development = JSON.stringify(data.user[i].Tool_for_development);
+        //   dataget[i].Software_Package = JSON.stringify(data.user[i].Software_Package);
+        //   dataget[i].Email_Address = JSON.stringify(data.user[i].Email_Address);
+        //   dataget[i].Github = JSON.stringify(data.user[i].Github);
+        //   dataget[i].Linkedin = JSON.stringify(data.user[i].Linkedin);
+        //   dataget[i].Major = JSON.stringify(data.user[i].Major);
+        //   dataget[i].Minor = JSON.stringify(data.user[i].Minor);
+        //   dataget[i].About_you = JSON.stringify(data.user[i].About_you);
+        //   dataget[i].Picture = JSON.stringify(data.user[i].Picture);
+        //   dataget[i].Experiece = JSON.stringify(data.user[i].Experiece);
+        //   dataget[i].Reference = JSON.stringify(data.user[i].Reference);
+        //   dataget[i].Token = JSON.stringify(data.user[i].Token);
+    
+    
+        // }
+        getValue();
+      });
+    </script>
+    <script>
+      function showhide() {
+        x = document.getElementById("alert2")
+        x.style.display = "none";
+        showhide2()
+      }
+    
+    </script>
+    <script>
+      function showhide2() {
+        y = document.getElementById("alert")
+        y.style.display = "none";
+      }
+    
+    </script>
+    <script>
+      function getValue() {
+        var check = document.getElementById('id').value;
+        var token = document.getElementById('token').value;
+        document.getElementById("b1").disabled = true;
+        for (var i = 0; i < dataget.length; i++) {
+          if ((dataget[i].ID) == check && (dataget[i].Token) == token) {
+            console.log((dataget[i].Token))
+            document.getElementById("b1").disabled = false;
+            document.getElementById("tn").value = (dataget[i].Title_Name);
+            document.getElementById("name").value = (dataget[i].First_Name);
+            document.getElementById("lname").value = (dataget[i].Last_Name);
+            localtime = moment((dataget[i].Date_of_birth)).format('YYYY-MM-DD')
+            document.getElementById("dob").value = localtime;
+            document.getElementById("tel").value = "0" + dataget[i].Telephone_Number;
+            document.getElementById("fb").value = (dataget[i].Facebook);
+            document.getElementById("line").value = (dataget[i].Line);
+            document.getElementById("ig").value = (dataget[i].Instagram);
+            document.getElementById("git").value = (dataget[i].Github);
+            document.getElementById("link").value = (dataget[i].Linkedin);
+            document.getElementById("mail").value = (dataget[i].Email_Address);
+            document.getElementById("aic").value = (dataget[i].Address_in_ID_Card);
+            document.getElementById("ca").value = (dataget[i].Current_Address);
+            document.getElementById("ei").value = (dataget[i].Educational_institution);
+            document.getElementById("major").value = (dataget[i].Major);
+            document.getElementById("minor").value = (dataget[i].Minor);
+            document.getElementById("gpa").value = (dataget[i].GPAX);
+            document.getElementById("tfp").value = (dataget[i].Tool_for_development);
+            document.getElementById("spack").value = (dataget[i].Software_Package);
+            document.getElementById("about").value = (dataget[i].About_you);
+            splitpath = (dataget[i].Picture).split("\\");
+            console.log(splitpath[2])
+            document.getElementById("picbefore").src = 'uploads/' + splitpath[2];
+            console.log(document.getElementById("picbefore").src = 'uploads/' + splitpath[2])
+            document.getElementById("exp").value = (dataget[i].Experiece);
+            document.getElementById("ref").value = (dataget[i].Reference);
+            // x = document.getElementById("alert2")
+            // x.style.display = "none";
+            // y = document.getElementById("alert")
+            //     y.style.display = "block";
+            document.getElementById("alert2").style.visibility = 'hidden';
+            document.getElementById("alert").innerHTML = 'Your id and token is correct';
+            document.getElementById("alert").style.color = "green";
+    
+            // document.getElementById("id").value = '123465';
+            // alert('yes')
+            var elt = $('.example_typeahead > > input');
+            elt.tagsinput('add', (dataget[i].Skill_programming));
+    
+    
+          } else {
+            if (check != '' && token != '' || ((dataget[i].ID) == check && (dataget[i].Token) == token)) {
+              // document.getElementById("alert").style.visibility = 'hidden';
+              document.getElementById("alert2").innerHTML = 'Your id and token is incorrect';
+              document.getElementById("alert2").style.color = "red";
+            }
+          }
+          // if(check !== (dataget[i].ID) && token !== (dataget[i].Token)){
+    
+          // }else{
+          //     document.getElementById("alert").style.visibility = 'hidden';
+          //     document.getElementById("alert2").innerHTML = 'Your id and token is incorrect';
+          //     document.getElementById("alert2").style.color = "red";
+          //     console.log('fasfas')
+          // }
+    
+          // x = document.getElementById("alert2")
+          // x.style.display = "block";
+          // y = document.getElementById("alert")
+          // y.style.display = "none";
+        }
+        return false;
+      }
+    </script>
+    <!-- <script>
+    //     const url = 'process.php';
+    //     const form = document.querySelector('form');
+      
+    //     form.addEventListener('submit', e => {
+    //       e.preventDefault();
+      
+    //       const files = document.querySelector('[type=file]').files;
+    //       const formData = new FormData();
+      
+    //       for (let i = 0; i < files.length; i++) {
+    //         let file = files[i];
+      
+    //         formData.append('files[]', file);
+    //       }
+      
+    //       fetch(url, {
+    //         method: 'POST',
+    //         body: formData
+    //       }).then(response => {
+    //         // insert_value();
+    //         // update_value();
+    //         console.log(response);
+    //       });
+    //     });
+    //   </script> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="js/bootstrap-tagsinput.min.js"></script>
+    <script src="js/bootstrap-tagsinput-angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/app_bs3.js"></script>
+    <script src="js/moment.js"></script>
+
+</body>
+</html>

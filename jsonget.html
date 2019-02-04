@@ -1,0 +1,319 @@
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  <link rel="stylesheet" href="edit.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+
+    // var script_url = "https://script.google.com/macros/s/AKfycbzJYs_28XWTrzLZ2bVLlAdWdAel9ybR9LnISOi0AFUppfh4l6a8/exec";
+    // var script_url ="https://script.google.com/macros/s/AKfycbwSjqEJVsHBXWeasMPL94IPbbU0W-AStG4iN7m6rteUwgzd19c/exec";
+    var script_url = "https://script.google.com/macros/s/AKfycbyvpubxf10s296AfbmI_hADcHueRQgENIQImvelsQ/exec";
+    var urljson = "https://script.googleusercontent.com/macros/echo?user_content_key=MM3e1D0APl1h3NBDmwtGWvyYkIvqr2vBEM2Kj56_h08nKCKO8Lnnfas0guS5_nnFUlswMbPOVtF0GDCPmOhf8Tsodpt69HxJm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnIW7h2wDpYxUydCzfHveGaVZ2bug2r9Dj_xhxf0mbOST_4iE_GS4YTRsWWZ0DgnP9Kln04wCMZad&lib=MVDbopYd8tbNMsyufcdaoDM4C9y1VNee5";
+
+    // var deJson = JSON.parse(urljson);
+    // console.log(script_url);
+    // console.log(deJson);
+    var jq = $.getJSON(urljson, function(data) {
+    // console.log(data.user[1].time_stamp);
+    var data44 = [];
+    var dataJSON2 = [{}];
+    var data442 = [];
+    for(var i=0;i<data.user.length;i++){
+            data44.time_stamp = JSON.stringify(data.user[i].time_stamp);
+            data44.ID = JSON.stringify(data.user[i].ID);
+            data44.Title_Name = JSON.stringify(data.user[i].Title_Name);
+            data44.First_Name = JSON.stringify(data.user[i].First_Name);
+            data44.Date_of_birth = JSON.stringify(data.user[i].Date_of_birth);
+            data44.Telephone_Number = JSON.stringify(data.user[i].Telephone_Number);
+            data44.Facebook = JSON.stringify(data.user[i].Facebook);
+            data44.line = JSON.stringify(data.user[i].line);
+            data44.Instagram = JSON.stringify(data.user[i].Instagram);
+            data44.Address_in_ID_Card = JSON.stringify(data.user[i].Address_in_ID_Card);
+            data44.Current_Address = JSON.stringify(data.user[i].Current_Address);
+            data44.Educational_institution = JSON.stringify(data.user[i].Educational_institution);
+            data44.GPAX = JSON.stringify(data.user[i].GPAX);
+            data44.Skill_programming = JSON.stringify(data.user[i].Skill_programming);
+            data44.Tool_for_development = JSON.stringify(data.user[i].Tool_for_development);
+            data44.Software_Package = JSON.stringify(data.user[i].Software_Package);
+            data44.Email_Address = JSON.stringify(data.user[i].Email_Address);
+            var data445 = data44.make;
+            var data4456 = [data445];
+            // console.log(data445);
+            // console.log(data44.time_stamp);
+            // console.log(data44.ID);
+            // console.log(data44.type);
+            // console.log(data44.image);
+            var A =  data.user.filter((userfilter) => userfilter.ID === i)
+          // console.log(JSON.stringify(A))
+          var a1 = JSON.stringify(A);
+          // console.log('aaaaaaaaaaaaaaaaaa');
+          var a2 = []
+          a2 = a1
+          // console.log(a1[i]);
+          // console.log(a2)
+          dataJSON2.push(data.user[i].ID + ','+data.user[i].time_stamp);
+          console.log(data44);
+          data442.push(data44);
+
+    }
+    console.log('data442')
+    console.log(data442)
+    console.log(data44)
+    // console.log(a1);
+    let a11 = a1
+    // console.log(typeof(dataJSON2));
+    // console.log(dataJSON2);
+    // console.log(typeof(data44));
+    // console.log(data44);
+    // console.log(A)
+    var dataJSON = [];
+    dataJSON = data44.time_stamp + data44.ID +data44.Title_Name +data44.First_Name;
+    // console.log(typeof(dataJSON));
+    // console.log(data44.time_stamp);
+    // console.log('data44.make');
+    // console.log(data.user[1].time_stamp);
+
+});
+
+// console.log(typeof(data3));
+// console.log((data3));
+// console.log((data3.responseJSON));
+    
+
+    // Make an AJAX call to Google Script
+    function insert_value() {
+
+      $("#re").css("visibility", "hidden");
+      document.getElementById("loader").style.visibility = "visible";
+      $('#mySpinner').addClass('spinner');
+
+      var id1 = $("#id").val();
+      var tn = $("#tn").val();
+      var name = $("#name").val();
+      var lname = $("#lname").val();
+      var dob = $("#dob").val();
+      var tel = $("#tel").val();
+      var fb = $("#fb").val();
+      var line = $("#line").val();
+      var ig = $("#ig").val();
+      var aic = $("#aic").val();
+      var ca = $("#ca").val();
+      var ei = $("#ei").val();
+      var gpa = $("#gpa").val();
+      var sp = $("#sp").val();
+      var tfp = $("#tfp").val();
+      var spack = $("#spack").val();
+      var mail = $("#mail").val();
+
+      // var sum = $("#id").val(); + $("#name").val(); + $("#lname").val();
+      console.log($("#id").val());
+      console.log($("#name").val());
+      console.log($("#lname").val());
+
+
+      // var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname +"&action=insert";
+      // var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&action=insert";
+      var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&action=insert";
+      console.log(url);
+
+
+
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+    }
+
+    function update_value() {
+      $("#re").css("visibility", "hidden");
+      document.getElementById("loader").style.visibility = "visible";
+      var id1 = $("#id").val();
+      var tn = $("#tn").val();
+      var name = $("#name").val();
+      var lname = $("#lname").val();
+      var dob = $("#dob").val();
+      var tel = $("#tel").val();
+      var fb = $("#fb").val();
+      var line = $("#line").val();
+      var ig = $("#ig").val();
+      var aic = $("#aic").val();
+      var ca = $("#ca").val();
+      var ei = $("#ei").val();
+      var gpa = $("#gpa").val();
+      var sp = $("#sp").val();
+      var tfp = $("#tfp").val();
+      var spack = $("#spack").val();
+      var mail = $("#mail").val();
+      var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&action=update";
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+      console.log($("#id").val());
+      console.log($("#name").val());
+      console.log($("#lname").val());
+
+
+    }
+    function delete_value() {
+      $("#re").css("visibility", "hidden");
+      document.getElementById("loader").style.visibility = "visible";
+      $('#mySpinner').addClass('spinner');
+      var id1 = $("#id").val();
+      var tn = $("#tn").val();
+      var name = $("#name").val();
+      var lname = $("#lname").val();
+      var dob = $("#dob").val();
+      var tel = $("#tel").val();
+      var fb = $("#fb").val();
+      var line = $("#line").val();
+      var ig = $("#ig").val();
+      var aic = $("#aic").val();
+      var ca = $("#ca").val();
+      var ei = $("#ei").val();
+      var gpa = $("#gpa").val();
+      var sp = $("#sp").val();
+      var tfp = $("#tfp").val();
+      var spack = $("#spack").val();
+      var mail = $("#mail").val();
+      var url = script_url + "?callback=ctrlq&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&action=delete";
+      var sss = "https://docs.google.com/spreadsheets/d/1duiJZGrAchzeMIbKzbsa5pM8T2-lkfbJJtZtTE5evTk/edit?usp=sharing";
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+
+    }
+    // print the returned data
+    function ctrlq(e) {
+      $("#re").html(e.result);
+      $("#re").css("visibility", "visible");
+      read_value();
+
+    }
+    function read_value() {
+
+      $("#re").css("visibility", "hidden");
+
+      document.getElementById("loader").style.visibility = "visible";
+      var url = script_url + "?action=read";
+
+      $.getJSON(url, function (json) {
+
+        // Set the variables from the results array
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+        var header = table.createTHead();
+        var row = header.insertRow(0);
+        // for(var k =0;k<16;k++){
+
+        // }
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+        var cell10 = row.insertCell(9);
+        var cell11 = row.insertCell(10);
+        var cell12 = row.insertCell(11);
+        var cell13 = row.insertCell(12);
+        var cell14 = row.insertCell(13);
+        var cell15 = row.insertCell(14);
+        var cell16 = row.insertCell(15);
+        var cell17 = row.insertCell(16);
+
+        cell1.innerHTML = "<b>ID</b>";
+        cell2.innerHTML = "<b>Title_Name</b>";
+        cell3.innerHTML = "<b>First_Name</b>";
+        cell4.innerHTML = "<b>Last_Name</b>";
+        cell5.innerHTML = "<b>Date_of_birth</b>";
+        cell6.innerHTML = "<b>Telephone_Number</b>";
+        cell7.innerHTML = "<b>Facebook</b>";
+        cell8.innerHTML = "<b>Line</b>";
+        cell9.innerHTML = "<b>Instagram</b>";
+        cell10.innerHTML = "<b>Address_in_ID_Card</b>";
+        cell11.innerHTML = "<b>Current_Address</b>";
+        cell12.innerHTML = "<b>Educational_institution</b>";
+        cell13.innerHTML = "<b>GPAX</b>";
+        cell14.innerHTML = "<b>Skill_programming</b>";
+        cell15.innerHTML = "<b>Tool_for_development</b>";
+        cell16.innerHTML = "<b>Software_Package</b>";
+        cell17.innerHTML = "<b>Email_Address</b>";
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < json.records.length; i++) {
+
+          tr = table.insertRow(-1);
+          var tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].ID;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Title_Name;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].First_Name;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Last_Name;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Date_of_birth;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Telephone_Number;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Facebook;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Line;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Instagram;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Address_in_ID_Card;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Current_Address;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Educational_institution;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].GPAX;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Skill_programming;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Tool_for_development;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Software_Package;
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = json.records[i].Email_Address;
+
+
+
+          // console.log(json.records[i].LNAME);
+
+        }
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+        document.getElementById("loader").style.visibility = "hidden";
+        $("#re").css("visibility", "visible");
+      });
+    }
+
+  </script>
+
+</head>
+
+<body bgcolor="#673AB7">
+
+</body>
+
+
+</html>

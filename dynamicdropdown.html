@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+
+<body>
+    <div><Label>Province :</Label> <br>
+        <div id="mySelect_1" name="mySelect_1"></div><br>
+    </div>
+    <div><Label>Districts :</Label> <br>
+        <div id="mySelect_2" name="mySelect_2"></div><br>
+    </div>
+    <div><Label>Subdistricts :</Label> <br>
+        <div id="mySelect_3" name="mySelect_3"></div><br>
+    </div>
+    <!-- <div><Label>zipcode :</Label> <br>
+        <div id="mySelect_4" name="mySelect_4"></div>
+    </div> -->
+    <Label>zipcode :</Label> <br>
+    <input type="text" id="zip" name="zip"></input>
+</body>
+<script>
+    dataget_s = [];
+    fetch('json/subdistricts.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            dataget_s = myJson.subdistricts
+            dataget_s.sort(function(a,b){
+            var sort_s = a.name_in_english < b.name_in_english? -1:1;
+            return sort_s
+            });
+            dynamicdropdown_sub()
+        });
+</script>
+<script>
+    dataget_s = [];
+    fetch('json/subdistricts.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            dataget_s = myJson.subdistricts
+            dynamicdropdown_zip()
+        });
+</script>
+<script>
+    dataget_d = [];
+    fetch('json/districts.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            dataget_d = myJson.districts
+            dataget_d.sort(function(a,b){
+            var sort_d = a.d_name_in_english < b.d_name_in_english? -1:1;
+            return sort_d;
+            })
+            dynamicdropdown()
+        });
+</script>
+<script>
+    function dynamicdropdown(listindex) {
+        var html = '';
+        html = html + '<select id="dis" name="dis" style="margin: 8px 0;margin-left: 1px;" onchange="javascript: dynamicdropdown_sub(this.value);">';
+        html = html + '<option value="0">Select </option>';
+        for (var i = 0; i < dataget_d.length; i++) {
+            if (listindex == dataget_d[i].province_id) {
+                html = html + '<option value="' + dataget_d[i].district_id + '">' + dataget_d[i].d_name_in_english + '</option>'
+            }
+        }
+        html = html + '</select>';
+        $('#mySelect_2').html(html)
+    }
+</script>
+<script>
+    function dynamicdropdown_sub(listindexs) {
+        var html = '';
+        html = html + '<select id="sub" name="sub" style="margin: 8px 0;margin-left: 1px;" onchange="javascript: dynamicdropdown_zip(this.value);">';
+        html = html + '<option value="0">Select </option>';
+        for (var i = 0; i < dataget_s.length; i++) {
+            if (listindexs == dataget_s[i].district_id) {
+                html = html + '<option value="' + dataget_s[i].id + '">' + dataget_s[i].name_in_english + '</option>'
+            }
+        }
+        html = html + '</select>';
+        $('#mySelect_3').html(html)
+    }
+</script>
+<script>
+    function dynamicdropdown_zip(listindexs) {
+        // var html = '';
+        // html = html + '<select id="zip" name="zip">';
+        // html = html + '<option value="0">Select </option>';
+        for (var i = 0; i < dataget_s.length; i++) {
+            if (listindexs == dataget_s[i].district_id) {
+                // html = html + '<option value="' + dataget_s[i].id + '">' + dataget_s[i].zip_code + '</option>'
+                document.getElementById("zip").value = dataget_s[i].zip_code
+                console.log(document.getElementById("zip").value)
+            }
+        }
+        // html = html + '</select>';
+        // $('#mySelect_4').html(html)
+    }
+</script>
+<script>
+    dataget_p = [];
+    fetch('json/provinces.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            dataget_p = myJson.provinces
+            dataget_p.sort(function(a,b){
+                var sort_p = a.p_name_in_english < b.p_name_in_english? -1:1;
+                return sort_p
+            });
+            dynamicdropdown_pro()
+        });
+
+</script>
+<script>
+    function dynamicdropdown_pro(listindexp) {
+        var html = '';
+        html = html + '<select id="pro" name="pro" style="margin: 8px 0;margin-left: 1px;" onchange="javascript: dynamicdropdown(this.value);">';
+        html = html + '<option value="0">Select </option>';
+        for (var i = 0; i < dataget_p.length; i++) {
+            html = html + '<option value="' + dataget_p[i].province_id + '">' + dataget_p[i].p_name_in_english + '</option>'
+        }
+        html = html + '</select>';
+        $('#mySelect_1').html(html)
+    }
+</script>
+
+</html>

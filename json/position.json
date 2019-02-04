@@ -1,0 +1,39 @@
+{
+    "job" : [
+        { 
+            "id" : "1",
+            "name" : "Developer"
+    },
+        { 
+            "id" : "2",
+            "name" : "System Engineer"
+    },
+    { 
+            "id" : "3",
+            "name" : "System Analyst"
+    },
+    { 
+            "id" : "4",
+            "name" : "Business Analyst"
+    },
+    { 
+            "id" : "5",
+            "name" : "Software Tester"
+    },
+    { 
+            "id" : "6",
+            "name" : "Project Manager"
+    },
+    { 
+            "id" : "7",
+            "name" : "Recruitment"
+    },
+    { 
+            "id" : "8",
+            "name" : "Sale"
+    },
+    { 
+            "id" : "9",
+            "name" : "Project Coordinator"
+    }
+]}
