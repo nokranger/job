@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Show</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/Appscript_dev/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="/Appscript_dev/css/bootstrap_1.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/css/bootstrap_1.css">
     <!-- <link rel="stylesheet" href="css/social.css"> -->
-    <link rel="shortcut icon" type="image/png" href="/Appscript_dev/img/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
 
-    <link rel="stylesheet" href="/Appscript_dev/css/social_2.css">
+    <link rel="stylesheet" href="/css/social_2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,8 +19,8 @@
         crossorigin='anonymous'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="/Appscript_dev/css/show.css">
-    <script type="text/javascript" src="/Appscript_dev/js/session.js"></script>
+    <link rel="stylesheet" href="/css/show.css">
+    <script type="text/javascript" src="/js/session.js"></script>
 
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -100,7 +100,7 @@ overflow-y: auto;
     
     <script>
         if (Session.get("status") != 1) {
-            window.location.href = '\/Appscript_dev/login';
+            window.location.href = '/login';
         }
     </script>
     <script>
@@ -113,7 +113,7 @@ overflow-y: auto;
                     // console.log("exit")
                             // alert("Logout successfully");
                             Session.set("status", '0');
-                            window.location = "\/Appscript_dev/login"; // Redirecting to other page.
+                            window.location = "/login"; // Redirecting to other page.
                             return false;
                 }
             }
@@ -157,7 +157,7 @@ overflow-y: auto;
                         document.getElementById("tfp").innerHTML = (dataget[i].Tool_for_development);
                         document.getElementById("spack").innerHTML = (dataget[i].Software_Package);
                         document.getElementById("mail").innerHTML = (dataget[i].Email_Address);
-                        document.getElementById("pic").src = '/Appscript_dev/uploads/' + splitpath[2];
+                        document.getElementById("pic").src = '/uploads/' + splitpath[2];
                         document.getElementById("university").innerHTML = (dataget[i].Educational_institution);
                         document.getElementById("major").innerHTML = (dataget[i].Major);
                         document.getElementById("minor").innerHTML = (dataget[i].Minor);
@@ -273,7 +273,7 @@ overflow-y: auto;
     </script>
     <script>
         function timeout() {
-            setTimeout(function () { window.location = "\/Appscript_dev/login"; }, 900000);
+            setTimeout(function () { window.location = "/login"; }, 900000);
             return hello()
         }
     </script>
@@ -300,7 +300,7 @@ overflow-y: auto;
 </head>
 
 <body onload="timeout()">
-        <form id="myform" name="myform"  method="POST" actions="/Appscript_dev/mailer_invitation.php"  onsubmit="javascript:confirmaccept()" enctype="multipart/form-data">
+        <form id="myform" name="myform"  method="POST" actions="/mailer_invitation.php"  onsubmit="javascript:confirmaccept()" enctype="multipart/form-data">
         <input type="hidden" name="ttn" id="ttn"></input>
         <input type="hidden" name="nname" id="nname" ></input>
         <input type="hidden" name="llname" id="llname" ></input>
@@ -453,7 +453,7 @@ overflow-y: auto;
                     </div>
                     <div class="colsm-3 col-md-3 col-lg-3 col-xl-3">
                         <div class="d-flex justify-content-start" style="margin-top:10px">
-                            <img id="pic" class="img-profile" src="/Appscript_dev/uploads/asdasd.PNG" alt="">
+                            <img id="pic" class="img-profile" src="/uploads/asdasd.PNG" alt="">
                         </div>
                     </div>
                 </div>
@@ -579,7 +579,7 @@ overflow-y: auto;
                         document.getElementById("tfp").innerHTML = (dataget[i].Tool_for_development);
                         document.getElementById("spack").innerHTML = (dataget[i].Software_Package);
                         document.getElementById("mail").innerHTML = (dataget[i].Email_Address);
-                        document.getElementById("pic").src = '/Appscript_dev/uploads/' + splitpath[2];
+                        document.getElementById("pic").src = '/uploads/' + splitpath[2];
                         document.getElementById("university").innerHTML = (dataget[i].Educational_institution);
                         document.getElementById("major").innerHTML = (dataget[i].Major);
                         document.getElementById("minor").innerHTML = (dataget[i].Minor);
@@ -662,7 +662,7 @@ overflow-y: auto;
                     for (var counter = 0; counter < json.length; counter++) {
                         var splitpath = (json[counter].Picture).split("\\");
                         // console.log('uploads/' + splitpath[2])
-                        $('#jsonTable').append("<tr><td>" + '<img style="width:90px;height110px;border-radius:50%;" src="' + '/Appscript_dev/uploads/' + splitpath[2] + '">' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + json[counter].ID + '</a>' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + json[counter].Position + '</a>' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + 'Viewmore...' + '</a>' + "</td></tr>");
+                        $('#jsonTable').append("<tr><td>" + '<img style="width:90px;height110px;border-radius:50%;" src="' + '/uploads/' + splitpath[2] + '">' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + json[counter].ID + '</a>' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + json[counter].Position + '</a>' + "</td><td>" + '<a href="' + kk + '' + json[counter].ID + '">' + 'Viewmore...' + '</a>' + "</td></tr>");
                     }
                     $('#jsonTable').append("</tbody>");
                     // $('th').css("border", "1px solid green");
@@ -670,7 +670,7 @@ overflow-y: auto;
             }
         </script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
-        <script src="/Appscript_dev/js/moment.js"></script>
+        <script src="/js/moment.js"></script>
 </body>
 
 </html>

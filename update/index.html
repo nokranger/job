@@ -4,15 +4,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <link rel="stylesheet" href="/Appscript_dev/css/edit.css">
-  <link rel="stylesheet" href="/Appscript_dev/css/bootstrap-grid.css">
-  <link rel="stylesheet" href="/Appscript_dev/css/bootstrap.css">
-  <link rel="stylesheet" href="/Appscript_dev/css/bootstrap.min.css">
-  <link href="/Appscript_dev/css/multiple-select.css" rel="stylesheet" />
-  <link rel="shortcut icon" type="image/png" href="/Appscript_dev/img/favicon.png" />
+  <link rel="stylesheet" href="/css/edit.css">
+  <link rel="stylesheet" href="/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link href="/css/multiple-select.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
 
-  <link rel="stylesheet" href="/Appscript_dev/css/bootstrap-tagsinput.css">
-  <link rel="stylesheet" href="/Appscript_dev/assets/app.css">
+  <link rel="stylesheet" href="/css/bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="/assets/app.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
   crossorigin='anonymous'>
@@ -500,7 +500,7 @@ b{
       // console.log('fasfasfa')
       // document.getElementById("alert").innerHTML = '';
       // document.getElementById("alert2").innerHTML = '';
-      document.getElementById("picpreview").src = "/Appscript_dev/uploads/asdasd.PNG";
+      document.getElementById("picpreview").src = "/uploads/asdasd.PNG";
       document.getElementById("sp").value = '';
       var elt = $('.example_typeahead > > input');
       elt.tagsinput('destroy');
@@ -543,13 +543,13 @@ b{
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-              <li ><a href="/Appscript_dev/"><i style="margin-right:10px" class="fa fa-address-book"></i>Register
+              <li ><a href="/"><i style="margin-right:10px" class="fa fa-address-book"></i>Register
                   </a></li>
-                  <li class="active"><a href="/Appscript_dev/update\"><i style="margin-right:10px" class="fa fa-edit"></i>Edit
+                  <li class="active"><a href="/update"><i style="margin-right:10px" class="fa fa-edit"></i>Edit
                     </a></li>
-                    <li ><a href="/Appscript_dev/delete"><i style="margin-right:10px" class="fa fa-remove"></i>Delete
+                    <li ><a href="/delete"><i style="margin-right:10px" class="fa fa-remove"></i>Delete
                       </a></li>
-                      <li ><a href="/Appscript_dev/login"><i style="margin-right:10px" class="fa fa-sign-in"></i>Login
+                      <li ><a href="/login"><i style="margin-right:10px" class="fa fa-sign-in"></i>Login
                         </a></li>
         </li>
         </ul>
@@ -626,7 +626,7 @@ b{
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" align="center">
               <br>
               <div id="aa">
-                <img id="picpreview" class="img-profile" src="/Appscript_dev/uploads/asdasd.PNG" alt="">
+                <img id="picpreview" class="img-profile" src="/uploads/asdasd.PNG" alt="">
               </div>
               <label>Your picture</label>
               <input type="file" name="files[]" id="pic" multiple></input>
@@ -1184,7 +1184,7 @@ b{
 </script>
 <script>
   dataget_db = [];
-  fetch('/Appscript_dev/json/db.json')
+  fetch('/json/db.json')
     .then(function (response) {
       return response.json();
     })
@@ -1199,7 +1199,7 @@ b{
 </script>
 <script>
   dataget_job = [];
-  fetch('/Appscript_dev/json/position.json')
+  fetch('/json/position.json')
     .then(function (response) {
       return response.json();
     })
@@ -1324,7 +1324,7 @@ b{
         document.getElementById("cs").value = (dataget[i].Current_salary);
         splitpath = (dataget[i].Picture).split("\\");
         // console.log(splitpath[2])
-        document.getElementById("picpreview").src = '/Appscript_dev/uploads/' + splitpath[2];
+        document.getElementById("picpreview").src = '/uploads/' + splitpath[2];
         // console.log(document.getElementById("picpreview").src = 'uploads/' + splitpath[2])
         document.getElementById("exp").value = (dataget[i].Experiece);
         document.getElementById("ref").value = (dataget[i].Reference);
@@ -1346,7 +1346,7 @@ b{
   }
 </script>
 <script>
-  const url = '/Appscript_dev/process.php';
+  const url = '/process.php';
   const form = document.querySelector('form');
   form.addEventListener('submit', e => {
     e.preventDefault();
@@ -1372,16 +1372,16 @@ b{
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-<script src="/Appscript_dev/js/bootstrap-tagsinput.min.js"></script>
-<script src="/Appscript_dev/js/bootstrap-tagsinput-angular.min.js"></script>
+<script src="/js/bootstrap-tagsinput.min.js"></script>
+<script src="/js/bootstrap-tagsinput-angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.js"></script>
-<script src="/Appscript_dev/assets/app.js"></script>
-<script src="/Appscript_dev/assets/app_bs3.js"></script>
-<script src="/Appscript_dev/js/moment.js"></script>
-<script src="/Appscript_dev/js/checkvalidate.js"></script>
-<script src="/Appscript_dev/js/bootstrap.min.js"></script>
+<script src="/assets/app.js"></script>
+<script src="/assets/app_bs3.js"></script>
+<script src="/js/moment.js"></script>
+<script src="/js/checkvalidate.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 </html>
