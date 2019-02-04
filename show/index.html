@@ -229,7 +229,7 @@ overflow-y: auto;
             
             var url = script_url2 + "?callback&name=" + name + "&id=" + id1 + "&lname=" + lname + "&tn=" + tn + "&dob=" + dob + "&tel=" + tel + "&fb=" + fb + "&line=" + line + "&ig=" + ig + "&aic=" + aic + "&ca=" + ca + "&ei=" + ei + "&gpa=" + gpa + "&sp=" + sp + "&tfp=" + tfp + "&spack=" + spack + "&mail=" + mail + "&git=" + git + "&link=" + link + "&major=" + major + "&minor=" + minor + "&about=" + about + "&pic=" + pic + "&exp=" + exp + "&ref=" + ref + "&token=" + token + "&height=" + height + "&weight=" + weight + "&age=" + age + "&job=" + job + "&sal=" + sal + "&db=" + db + "&os=" + os + "&cen=" + cen + "&job_l=" + job_l + "&swd=" + swd + "&dop=" + dop + "&cs=" + cs + "&port=" + port + "&status=" + status + "&action=insert";
 
-            document.getElementById("myform").action = "mailer_invitation.php";
+            document.getElementById("myform").action = "/mailer_invitation.php";
             // document.getElementById("myform").action = "mailer_invitation.php";
             var request = jQuery.ajax({
                 crossDomain: true,
